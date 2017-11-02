@@ -1,6 +1,6 @@
 # eecs395-Hvz: Information
 
-Website: http://ec2-35-163-170-184.us-west-2.compute.amazonaws.com/players
+Website: http://ec2-35-163-170-184.us-west-2.compute.amazonaws.com
 
 <b>This code was initially pulled from cwru-hvz-source:</b> https://github.com/cwru-hvz-core/cwru-hvz-source.git
 The code has been found to be extremely defective and is currently being modified
