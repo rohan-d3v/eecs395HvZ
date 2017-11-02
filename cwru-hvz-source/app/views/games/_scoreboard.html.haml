@@ -1,0 +1,15 @@
+%div.player{ class: [Registration::FACTION_NAMES[player.display_faction_id], player.human_type.try(:downcase)] }
+  %ul
+    %li.number
+      #{number}.
+    %li.picture.right
+      = image_tag profile_photo_url(player.person, 32), alt: ''
+    %li.name.right{ class: ("admin" if player.person.try(:is_admin?)) }
+      = player.person.try(:name) || 'Unknown Player'
+      - if player.is_oz? && player.game.ozs_revealed?
+        (OZ)
+    %li.survival.right
+      = get_scoreboard_text(player)
+    %li.points.right
+      %span.highlight= player.display_score
+      Pts
