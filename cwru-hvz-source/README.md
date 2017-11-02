@@ -5,30 +5,30 @@ and follow standard setup. The link that I've found to be the most useful is thi
 
 <b>2) Install Passenger:</b> </br>
 
-- First, install the PGP key for the repository server:</p>
+- First, install the PGP key for the repository server:</br>
 <code langs="">sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 561F9B9CAC40B2F7
 </code>
-<p>Create an APT source file:</p>
+<p>Create an APT source file:</br>
 <code langs="">sudo nano /etc/apt/sources.list.d/passenger.list
 </code>
-- Insert the following line to add the Passenger repository to the file:</p>
+- Insert the following line to add the Passenger repository to the file:</br>
 <code langs="">deb https://oss-binaries.phusionpassenger.com/apt/passenger trusty main
 </code>
-- Press <strong>CTRL+X</strong> to exit, type <strong>Y</strong> to save the file, and then press ENTER to confirm the file location.</p>
-- Change the owner and permissions for this file to restrict access to <strong>root</strong>:</p>
+- Press <strong>CTRL+X</strong> to exit, type <strong>Y</strong> to save the file, and then press ENTER to confirm the file location.</br>
+- Change the owner and permissions for this file to restrict access to <strong>root</strong>:</br>
 <code langs="">sudo chown root: /etc/apt/sources.list.d/passenger.list
 sudo chmod 600 /etc/apt/sources.list.d/passenger.list
 </code>
-- Update the APT cache:</p>
+- Update the APT cache:</br>
 <code langs="">sudo apt-get update
 </code>
-- Finally, install Passenger:</p>
+- Finally, install Passenger:</br>
 <code langs="">sudo apt-get install libapache2-mod-passenger
 </code>
-- Make sure the Passenger Apache module; it maybe enabled already:</p>
+- Make sure the Passenger Apache module; it maybe enabled already:</br>
 <code langs="">sudo a2enmod passenger
 </code>
-- Restart Apache:</p>
+- Restart Apache:</br>
 <code langs="">sudo service apache2 restart
 </code>
 </br>
