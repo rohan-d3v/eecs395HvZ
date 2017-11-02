@@ -5,6 +5,10 @@ Website: http://ec2-35-163-170-184.us-west-2.compute.amazonaws.com
 <b>This code was initially pulled from cwru-hvz-source:</b> https://github.com/cwru-hvz-core/cwru-hvz-source.git
 The code has been found to be extremely defective and is currently being modified
 The deployment instructions are outdated, incomplete and not useful and is in the process of being/has been updated
+The rails app itself was extremely outdated and was using a not recommended version with nginx and unicorn. 
+It has been switched over to the latest version at this point
+
+If the gems aren't the latest in my code update, they are the latest possible that are still compatible with the code and will be adjusted as the code is re-written
 
 <b>Bugs are detailed under issues and currently found code defects/ bugs are listed here:</b>
 
