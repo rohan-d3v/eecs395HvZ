@@ -6,40 +6,40 @@ and follow standard setup. The link that I've found to be the most useful is thi
 <b>2) Install Passenger:</b> </br>
 
 - First, install the PGP key for the repository server:</br>
-<code langs="">sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 561F9B9CAC40B2F7
+<code>sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 561F9B9CAC40B2F7
 </code></br>
 
 - Create an APT source file:</br>
-<code langs="">sudo nano /etc/apt/sources.list.d/passenger.list
+<code>sudo nano /etc/apt/sources.list.d/passenger.list
 </code></br>
 
 - Insert the following line to add the Passenger repository to the file:</br>
-<code langs="">deb https://oss-binaries.phusionpassenger.com/apt/passenger trusty main
+<code>deb https://oss-binaries.phusionpassenger.com/apt/passenger trusty main
 </code></br>
 
 - Press <strong>CTRL+X</strong> to exit, type <strong>Y</strong> to save the file, and then press ENTER to confirm the file location.</br>
 
 - Change the owner and permissions for this file to restrict access to <strong>root</strong>:</br>
-<code langs="">sudo chown root: /etc/apt/sources.list.d/passenger.list</br>
+<code>sudo chown root: /etc/apt/sources.list.d/passenger.list</br>
 sudo chmod 600 /etc/apt/sources.list.d/passenger.list
 </code></br>
 
 - Update the APT cache:</br>
-<code langs="">sudo apt-get update
+<code>sudo apt-get update
 </code></br>
 
 - Finally, install Passenger:</br>
 
-<code langs="">sudo apt-get install libapache2-mod-passenger
+<code>sudo apt-get install libapache2-mod-passenger
 </code></br>
 
 - Make sure the Passenger Apache module is enabled; it maybe enabled already:</br>
 
-<code langs="">sudo a2enmod passenger
+<code>sudo a2enmod passenger
 </code></br>
 - Restart Apache:
 </br>
-<code langs="">sudo service apache2 restart
+<code>sudo service apache2 restart
 </code></br>
 </br>
 <b> 3) Install Ruby using rvm </b></br>
@@ -78,5 +78,41 @@ https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgres
  <code> sudo nano 000-default.conf </code></br>
  
 - Replace with the following code
+<code>
+&lt; VirtualHost *:80 &gt;
+ 
+	ServerAdmin rxr353@case.edu
+	DocumentRoot /home/INSERT_USER_HERE/eeccs395HvZ/cwru-hvz-source/public
+	RailsEnv development
 
-- Remember to change INSERT_USERNAME_HERE in the config file
+	# Available loglevels: trace8, ..., trace1, debug, info, notice, warn,
+	# error, crit, alert, emerg.
+	# It is also possible to configure the loglevel for particular
+	# modules, e.g.
+	#LogLevel info ssl:warn
+
+	ErrorLog ${APACHE_LOG_DIR}/error.log
+	CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+	<Directory "/home/INSERT_USER_HERE/eeccs395HvZ/cwru-hvz-source/public">
+	    Require all granted 
+	    Options FollowSymLinks
+	</Directory>
+&lt; /VirtualHost &gt;
+</code></br>
+
+- Remember to change INSERT_USER_HERE in the config file
+
+</br>
+<b> 8) Install older version of postgresql in gem </b></br>
+ 
+ <code> cd ~/eeccs395HvZ/cwru-hvz-source </code></br>
+ 
+ - Install older gem version
+ <code> gem install pg -v 0.20.0 </code></br>
+ 
+ <b> 9) Deploy app </b></br>
+ 
+ <code> bundle install </code></br>
+ <code> rake db:schema:load </code></br>
+
