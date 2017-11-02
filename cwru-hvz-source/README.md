@@ -8,27 +8,37 @@ and follow standard setup. The link that I've found to be the most useful is thi
 - First, install the PGP key for the repository server:</br>
 <code langs="">sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 561F9B9CAC40B2F7
 </code></br>
-<p>Create an APT source file:</br>
+
+- Create an APT source file:</br>
 <code langs="">sudo nano /etc/apt/sources.list.d/passenger.list
 </code></br>
+
 - Insert the following line to add the Passenger repository to the file:</br>
 <code langs="">deb https://oss-binaries.phusionpassenger.com/apt/passenger trusty main
 </code></br>
+
 - Press <strong>CTRL+X</strong> to exit, type <strong>Y</strong> to save the file, and then press ENTER to confirm the file location.</br>
+
 - Change the owner and permissions for this file to restrict access to <strong>root</strong>:</br>
 <code langs="">sudo chown root: /etc/apt/sources.list.d/passenger.list</br>
 sudo chmod 600 /etc/apt/sources.list.d/passenger.list
 </code></br>
+
 - Update the APT cache:</br>
 <code langs="">sudo apt-get update
 </code></br>
+
 - Finally, install Passenger:</br>
+
 <code langs="">sudo apt-get install libapache2-mod-passenger
 </code></br>
-- Make sure the Passenger Apache module; it maybe enabled already:</br>
+
+- Make sure the Passenger Apache module is enabled; it maybe enabled already:</br>
+
 <code langs="">sudo a2enmod passenger
 </code></br>
-- Restart Apache:</br>
+- Restart Apache:
+</br>
 <code langs="">sudo service apache2 restart
 </code></br>
 </br>
@@ -52,16 +62,21 @@ sudo chmod 600 /etc/apt/sources.list.d/passenger.list
 https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-16-04 </br>
 
 - Create the users hvz_development, hvz, hvz_prod
+
 - Instructions are in the link above
+
 - Change the passwords for all 3 users to password
+
  <code> sudo -u postgres psql hvz</code></br>
  <code>\password hvz </code> </br>
  <code>\q</code></br>
 - Repear for the other 2 users
+
  </br>
  <b>7) Change Apache2 Config File </b></br>
  <code>cd /etc/apache2/sites-available</code></br>
  <code> sudo nano 000-default.conf </code></br>
+ 
 - Replace with the following code
 
 - Remember to change INSERT_USERNAME_HERE in the config file
