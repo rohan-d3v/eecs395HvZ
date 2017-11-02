@@ -34,13 +34,15 @@ sudo chmod 600 /etc/apt/sources.list.d/passenger.list
 </code>
 
 <b> Install Ruby using rvm </b></br>
-<p> Install RVM</p>
-<code>sudo apt-get update </code>
-<code>sudo apt-get install -y curl gnupg build-essential </code>
-<code>sudo gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 </code>
-<code>curl -sSL https://get.rvm.io | sudo bash -s stable </code>
-<code>sudo usermod -a -G rvm `whoami` </code>
-<code>rvm install ruby-2.2.0p0 </code>
-<code>rvm --default use ruby-2.2.0p0 </code>
-<code>gem install bundler </code>
+<p> Install RVM
+
+</p></br>
+<code>sudo apt-get update </code></br>
+<code>sudo apt-get install -y curl gnupg build-essential </code></br>
+<code>sudo gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 </code></br>
+<code>curl -sSL https://get.rvm.io | sudo bash -s stable </code></br>
+<code>sudo usermod -a -G rvm `whoami` </code></br>
+<code>rvm install ruby-2.2.0p0 </code></br>
+<code>rvm --default use ruby-2.2.0p0 </code></br>
+<code>gem install bundler </code></br>
 
