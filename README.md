@@ -10,12 +10,12 @@ The deployment instructions are outdated, incomplete and not useful and is in th
 
 Bugs discovered week ending Nov 3:
 
-Parameter and Create issue: waiver_controller.rb (CLOSED/FIXED)
-Parameter and Create Issue: games_controller.rb (CLOSED/FIXED)
-Signature_check method Always returns false: waiver_controller.rb (CLOSED/FIXED)
-Student ID always considered blank: waiver_controller.rb (CLOSED/FIXED)
-Defective code and multiple errors: waiver.rb (CLOSED/FIXED)
-Parameter and Create Issue: missions_controller.rb (CLOSED/FIXED)
-****
-Game Tools Issue: Null game upon cloning source (workaround has been created: temporary solution)
-Mission attendance breaks the website: missions_controller.rb (OPEN)
+Parameter and Create issue: waiver_controller.rb (CLOSED/FIXED) </br>
+Parameter and Create Issue: games_controller.rb (CLOSED/FIXED) </br>
+Signature_check method Always returns false: waiver_controller.rb (CLOSED/FIXED)</br>
+Student ID always considered blank: waiver_controller.rb (CLOSED/FIXED)</br>
+Defective code and multiple errors: waiver.rb (CLOSED/FIXED)</br>
+Parameter and Create Issue: missions_controller.rb (CLOSED/FIXED)</br>
+</br>
+Game Tools Issue: Null game upon cloning source (workaround has been created: temporary solution)</br>
+Mission attendance breaks the website: missions_controller.rb (OPEN)</br>
