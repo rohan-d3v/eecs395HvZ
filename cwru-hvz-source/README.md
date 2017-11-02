@@ -51,17 +51,17 @@ sudo chmod 600 /etc/apt/sources.list.d/passenger.list
 <b> 5) Install postgresql: This link is quite helpful </b></br>
 https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-16-04 </br>
 
- - Create the users hvz_development, hvz, hvz_prod
- - Instructions are in the link above
- - Change the passwords for all 3 users to password
+- Create the users hvz_development, hvz, hvz_prod
+- Instructions are in the link above
+- Change the passwords for all 3 users to password
  <code> sudo -u postgres psql hvz</code></br>
  <code>\password hvz </code> </br>
  <code>\q</code></br>
- - Repear for the other 2 users
+- Repear for the other 2 users
  </br>
  <b>7) Change Apache2 Config File </b></br>
  <code>cd /etc/apache2/sites-available</code></br>
  <code> sudo nano 000-default.conf </code></br>
- - Replace with the following code
+- Replace with the following code
 
 - Remember to change INSERT_USERNAME_HERE in the config file
