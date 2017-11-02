@@ -1,9 +1,8 @@
-# eecs395-Hvz: Deployment
-These are instructions for deployment on Ubuntu 16.04
+# eecs395-Hvz: Information
+This code was initially pulled from cwru-hvz-source: https://github.com/cwru-hvz-core/cwru-hvz-source.git
+The code has been found to be extremely defective and is currently being modified
+The deployment instructions are outdated, incomplete and not useful and is in the process of being/has been updated
 
-Download Apache and follow standard setup. The link that I've found to be the most useful is this:
-https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-ubuntu-16-04
+Bugs are detailed under issues and currently found code defects/ bugs are listed here:
 
-Follow the instructions below until end of Step 5:
-https://www.digitalocean.com/community/tutorials/how-to-deploy-a-rails-app-with-passenger-and-apache-on-ubuntu-14-04
 
