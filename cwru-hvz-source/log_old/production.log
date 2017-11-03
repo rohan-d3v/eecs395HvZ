@@ -1,0 +1,629 @@
+Started GET "/" for 157.55.39.188 at 2017-10-30 07:02:16 -0400
+Processing by IndexController#root as */*
+  Rendered games/_gamestats.html.haml (5.9ms)
+  Rendered index/root.html.haml within layouts/application (31.8ms)
+  Rendered index/_countdown.html.haml (1.0ms)
+Completed 200 OK in 78ms (Views: 32.1ms | ActiveRecord: 23.3ms)
+Started GET "/" for 66.249.83.93 at 2017-10-30 07:15:46 -0400
+Processing by IndexController#root as HTML
+  Rendered games/_gamestats.html.haml (3.7ms)
+  Rendered index/root.html.haml within layouts/application (42.1ms)
+  Rendered index/_countdown.html.haml (1.0ms)
+Completed 200 OK in 97ms (Views: 40.1ms | ActiveRecord: 29.4ms)
+Started GET "/" for 66.249.73.3 at 2017-10-30 08:33:43 -0400
+Processing by IndexController#root as HTML
+  Rendered games/_gamestats.html.haml (3.2ms)
+  Rendered index/root.html.haml within layouts/application (27.0ms)
+  Rendered index/_countdown.html.haml (0.8ms)
+Completed 200 OK in 80ms (Views: 28.1ms | ActiveRecord: 28.3ms)
+Started GET "/" for 157.55.39.188 at 2017-10-30 09:50:37 -0400
+Processing by IndexController#root as */*
+  Rendered games/_gamestats.html.haml (3.0ms)
+  Rendered index/root.html.haml within layouts/application (27.7ms)
+  Rendered index/_countdown.html.haml (0.8ms)
+Completed 200 OK in 73ms (Views: 28.1ms | ActiveRecord: 21.0ms)
+Started GET "/" for 66.102.6.249 at 2017-10-30 09:54:49 -0400
+Processing by IndexController#root as HTML
+  Rendered games/_gamestats.html.haml (4.1ms)
+  Rendered index/root.html.haml within layouts/application (189.3ms)
+  Rendered index/_countdown.html.haml (1.3ms)
+Completed 200 OK in 233ms (Views: 186.9ms | ActiveRecord: 24.8ms)
+Started GET "/" for 66.249.73.3 at 2017-10-30 09:54:58 -0400
+Processing by IndexController#root as HTML
+  Rendered games/_gamestats.html.haml (5.2ms)
+  Rendered index/root.html.haml within layouts/application (36.0ms)
+  Rendered index/_countdown.html.haml (0.7ms)
+Completed 200 OK in 79ms (Views: 35.2ms | ActiveRecord: 23.2ms)
+Started GET "/games/15/rules" for 66.249.73.1 at 2017-10-30 10:35:25 -0400
+Processing by GamesController#rules as HTML
+  Parameters: {"id"=>"15"}
+  Rendered games/rules.html.haml within layouts/application (29.1ms)
+  Rendered index/_countdown.html.haml (0.8ms)
+Completed 200 OK in 47ms (Views: 38.6ms | ActiveRecord: 5.5ms)
+Started GET "/games/15" for 192.5.110.6 at 2017-10-30 10:39:49 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"15"}
+Completed 304 Not Modified in 10ms (ActiveRecord: 4.0ms)
+Started GET "/" for 107.23.185.56 at 2017-10-30 11:02:35 -0400
+Processing by IndexController#root as */*
+  Rendered games/_gamestats.html.haml (3.1ms)
+  Rendered index/root.html.haml within layouts/application (27.7ms)
+  Rendered index/_countdown.html.haml (0.9ms)
+Completed 200 OK in 69ms (Views: 28.2ms | ActiveRecord: 21.5ms)
+Started GET "/" for 139.162.108.53 at 2017-10-30 11:04:24 -0400
+Processing by IndexController#root as HTML
+  Rendered games/_gamestats.html.haml (3.1ms)
+  Rendered index/root.html.haml within layouts/application (27.6ms)
+  Rendered index/_countdown.html.haml (0.7ms)
+Completed 200 OK in 70ms (Views: 28.5ms | ActiveRecord: 20.6ms)
+Started GET "/" for 66.249.73.3 at 2017-10-30 11:10:53 -0400
+Processing by IndexController#root as HTML
+  Rendered games/_gamestats.html.haml (3.3ms)
+  Rendered index/root.html.haml within layouts/application (30.9ms)
+  Rendered index/_countdown.html.haml (0.9ms)
+Completed 200 OK in 77ms (Views: 31.7ms | ActiveRecord: 22.5ms)
+Started GET "/wp-login.php" for 85.243.73.15 at 2017-10-30 11:17:37 -0400
+
+ActionController::RoutingError (No route matches [GET] "/wp-login.php"):
+  actionpack (3.2.14) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  railties (3.2.14) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.14) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  rack (1.4.7) lib/rack/methodoverride.rb:21:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  rack (1.4.7) lib/rack/runtime.rb:17:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  activesupport (3.2.14) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  rack (1.4.7) lib/rack/lock.rb:15:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/static.rb:63:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  rack-cache (1.6.1) lib/rack/cache/context.rb:140:in `forward'
+  rack-cache (1.6.1) lib/rack/cache/context.rb:249:in `fetch'
+  rack-cache (1.6.1) lib/rack/cache/context.rb:189:in `lookup'
+  rack-cache (1.6.1) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.6.1) lib/rack/cache/context.rb:51:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  railties (3.2.14) lib/rails/engine.rb:484:in `call'
+  railties (3.2.14) lib/rails/application.rb:231:in `call'
+  railties (3.2.14) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  rack (1.4.7) lib/rack/content_length.rb:14:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  rack (1.4.7) lib/rack/content_type.rb:19:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  rack (1.4.7) lib/rack/lint.rb:48:in `_call'
+  rack (1.4.7) lib/rack/lint.rb:36:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  rack (1.4.7) lib/rack/showexceptions.rb:24:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  rack (1.4.7) lib/rack/commonlogger.rb:33:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  rack (1.4.7) lib/rack/chunked.rb:43:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  rack (1.4.7) lib/rack/content_length.rb:14:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:562:in `process_client'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:658:in `worker_loop'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:508:in `spawn_missing_workers'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:132:in `start'
+  unicorn (5.2.0) bin/unicorn:126:in `<top (required)>'
+  /home/hvz/.rbenv/versions/2.0.0-p247/bin/unicorn:23:in `load'
+  /home/hvz/.rbenv/versions/2.0.0-p247/bin/unicorn:23:in `<main>'
+
+
+Started GET "/" for 85.243.73.15 at 2017-10-30 11:17:37 -0400
+Processing by IndexController#root as */*
+  Rendered games/_gamestats.html.haml (3.2ms)
+  Rendered index/root.html.haml within layouts/application (25.8ms)
+  Rendered index/_countdown.html.haml (1.0ms)
+Completed 200 OK in 72ms (Views: 26.0ms | ActiveRecord: 21.6ms)
+Started GET "/squads" for 157.55.39.72 at 2017-10-30 11:32:12 -0400
+Processing by SquadController#index as */*
+Redirected to http://hvz.case.edu/
+Filter chain halted as :check_is_registered rendered or redirected
+Completed 302 Found in 7ms (ActiveRecord: 3.6ms)
+Started GET "/missions" for 157.55.39.211 at 2017-10-30 11:32:15 -0400
+Processing by MissionsController#index as */*
+  Rendered missions/index.html.haml within layouts/application (8.0ms)
+  Rendered index/_countdown.html.haml (0.8ms)
+Completed 200 OK in 27ms (Views: 18.7ms | ActiveRecord: 4.8ms)
+Started GET "/bonus_codes/claim" for 157.55.39.211 at 2017-10-30 11:32:15 -0400
+Processing by BonusCodesController#claim as */*
+Redirected to http://hvz.case.edu/
+Filter chain halted as :check_is_registered rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 3.3ms)
+Started GET "/" for 157.55.39.188 at 2017-10-30 11:35:54 -0400
+Processing by IndexController#root as */*
+  Rendered games/_gamestats.html.haml (3.3ms)
+  Rendered index/root.html.haml within layouts/application (26.2ms)
+  Rendered index/_countdown.html.haml (1.3ms)
+Completed 200 OK in 223ms (Views: 183.0ms | ActiveRecord: 19.4ms)
+Started GET "/games/15/rules" for 66.249.73.5 at 2017-10-30 11:41:14 -0400
+Processing by GamesController#rules as HTML
+  Parameters: {"id"=>"15"}
+  Rendered games/rules.html.haml within layouts/application (24.8ms)
+  Rendered index/_countdown.html.haml (2.1ms)
+Completed 200 OK in 51ms (Views: 41.6ms | ActiveRecord: 5.8ms)
+Started GET "/" for 129.22.1.19 at 2017-10-30 11:54:10 -0400
+Processing by IndexController#root as HTML
+  Rendered games/_gamestats.html.haml (3.2ms)
+  Rendered index/root.html.haml within layouts/application (27.1ms)
+  Rendered index/_countdown.html.haml (0.8ms)
+Completed 200 OK in 75ms (Views: 27.9ms | ActiveRecord: 21.5ms)
+Started GET "/wp-login.php" for 198.98.183.51 at 2017-10-30 11:56:00 -0400
+
+ActionController::RoutingError (No route matches [GET] "/wp-login.php"):
+  actionpack (3.2.14) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  railties (3.2.14) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.14) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  rack (1.4.7) lib/rack/methodoverride.rb:21:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  rack (1.4.7) lib/rack/runtime.rb:17:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  activesupport (3.2.14) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  rack (1.4.7) lib/rack/lock.rb:15:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/static.rb:63:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  rack-cache (1.6.1) lib/rack/cache/context.rb:140:in `forward'
+  rack-cache (1.6.1) lib/rack/cache/context.rb:249:in `fetch'
+  rack-cache (1.6.1) lib/rack/cache/context.rb:189:in `lookup'
+  rack-cache (1.6.1) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.6.1) lib/rack/cache/context.rb:51:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  railties (3.2.14) lib/rails/engine.rb:484:in `call'
+  railties (3.2.14) lib/rails/application.rb:231:in `call'
+  railties (3.2.14) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  rack (1.4.7) lib/rack/content_length.rb:14:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  rack (1.4.7) lib/rack/content_type.rb:19:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  rack (1.4.7) lib/rack/lint.rb:48:in `_call'
+  rack (1.4.7) lib/rack/lint.rb:36:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  rack (1.4.7) lib/rack/showexceptions.rb:24:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  rack (1.4.7) lib/rack/commonlogger.rb:33:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  rack (1.4.7) lib/rack/chunked.rb:43:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  rack (1.4.7) lib/rack/content_length.rb:14:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:562:in `process_client'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:658:in `worker_loop'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:508:in `spawn_missing_workers'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:132:in `start'
+  unicorn (5.2.0) bin/unicorn:126:in `<top (required)>'
+  /home/hvz/.rbenv/versions/2.0.0-p247/bin/unicorn:23:in `load'
+  /home/hvz/.rbenv/versions/2.0.0-p247/bin/unicorn:23:in `<main>'
+
+
+Started GET "/" for 198.98.183.51 at 2017-10-30 11:56:00 -0400
+Processing by IndexController#root as */*
+  Rendered games/_gamestats.html.haml (4.5ms)
+  Rendered index/root.html.haml within layouts/application (33.4ms)
+  Rendered index/_countdown.html.haml (1.0ms)
+Completed 200 OK in 88ms (Views: 37.1ms | ActiveRecord: 25.4ms)
+Started GET "/games/15" for 129.22.1.19 at 2017-10-30 11:56:30 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"15"}
+Completed 304 Not Modified in 14ms (ActiveRecord: 5.7ms)
+Started GET "/" for 129.22.1.19 at 2017-10-30 11:56:49 -0400
+Processing by IndexController#root as HTML
+  Rendered games/_gamestats.html.haml (3.6ms)
+  Rendered index/root.html.haml within layouts/application (32.1ms)
+  Rendered index/_countdown.html.haml (0.9ms)
+Completed 200 OK in 80ms (Views: 32.1ms | ActiveRecord: 23.6ms)
+Started GET "/" for 155.94.88.58 at 2017-10-30 12:01:34 -0400
+Processing by IndexController#root as */*
+  Rendered games/_gamestats.html.haml (4.6ms)
+  Rendered index/root.html.haml within layouts/application (36.3ms)
+  Rendered index/_countdown.html.haml (0.9ms)
+Completed 200 OK in 91ms (Views: 35.7ms | ActiveRecord: 29.1ms)
+Started GET "/" for 66.249.73.1 at 2017-10-30 12:21:52 -0400
+Processing by IndexController#root as HTML
+  Rendered games/_gamestats.html.haml (3.8ms)
+  Rendered index/root.html.haml within layouts/application (34.2ms)
+  Rendered index/_countdown.html.haml (1.0ms)
+Completed 200 OK in 85ms (Views: 34.4ms | ActiveRecord: 25.0ms)
+Started GET "/ccvv" for 71.6.202.198 at 2017-10-30 12:52:04 -0400
+
+ActionController::RoutingError (No route matches [GET] "/ccvv"):
+  actionpack (3.2.14) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  railties (3.2.14) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.14) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  rack (1.4.7) lib/rack/methodoverride.rb:21:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  rack (1.4.7) lib/rack/runtime.rb:17:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  activesupport (3.2.14) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  rack (1.4.7) lib/rack/lock.rb:15:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/static.rb:63:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  rack-cache (1.6.1) lib/rack/cache/context.rb:140:in `forward'
+  rack-cache (1.6.1) lib/rack/cache/context.rb:249:in `fetch'
+  rack-cache (1.6.1) lib/rack/cache/context.rb:189:in `lookup'
+  rack-cache (1.6.1) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.6.1) lib/rack/cache/context.rb:51:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  railties (3.2.14) lib/rails/engine.rb:484:in `call'
+  railties (3.2.14) lib/rails/application.rb:231:in `call'
+  railties (3.2.14) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  rack (1.4.7) lib/rack/content_length.rb:14:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  rack (1.4.7) lib/rack/content_type.rb:19:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  rack (1.4.7) lib/rack/lint.rb:48:in `_call'
+  rack (1.4.7) lib/rack/lint.rb:36:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  rack (1.4.7) lib/rack/showexceptions.rb:24:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  rack (1.4.7) lib/rack/commonlogger.rb:33:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  rack (1.4.7) lib/rack/chunked.rb:43:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  rack (1.4.7) lib/rack/content_length.rb:14:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:562:in `process_client'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:658:in `worker_loop'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:508:in `spawn_missing_workers'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:132:in `start'
+  unicorn (5.2.0) bin/unicorn:126:in `<top (required)>'
+  /home/hvz/.rbenv/versions/2.0.0-p247/bin/unicorn:23:in `load'
+  /home/hvz/.rbenv/versions/2.0.0-p247/bin/unicorn:23:in `<main>'
+
+
+Started GET "/games/12" for 66.249.73.5 at 2017-10-30 13:18:02 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"12"}
+Completed 304 Not Modified in 9ms (ActiveRecord: 4.1ms)
+Started GET "/" for 188.138.1.119 at 2017-10-30 13:30:41 -0400
+Processing by IndexController#root as HTML
+  Rendered games/_gamestats.html.haml (3.2ms)
+  Rendered index/root.html.haml within layouts/application (27.4ms)
+  Rendered index/_countdown.html.haml (0.7ms)
+Completed 200 OK in 69ms (Views: 27.7ms | ActiveRecord: 21.2ms)
+Started GET "/sitemap.xml" for 188.138.1.119 at 2017-10-30 13:30:57 -0400
+
+ActionController::RoutingError (No route matches [GET] "/sitemap.xml"):
+  actionpack (3.2.14) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  railties (3.2.14) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.14) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  rack (1.4.7) lib/rack/methodoverride.rb:21:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  rack (1.4.7) lib/rack/runtime.rb:17:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  activesupport (3.2.14) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  rack (1.4.7) lib/rack/lock.rb:15:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/static.rb:63:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  rack-cache (1.6.1) lib/rack/cache/context.rb:140:in `forward'
+  rack-cache (1.6.1) lib/rack/cache/context.rb:249:in `fetch'
+  rack-cache (1.6.1) lib/rack/cache/context.rb:189:in `lookup'
+  rack-cache (1.6.1) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.6.1) lib/rack/cache/context.rb:51:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  railties (3.2.14) lib/rails/engine.rb:484:in `call'
+  railties (3.2.14) lib/rails/application.rb:231:in `call'
+  railties (3.2.14) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  rack (1.4.7) lib/rack/content_length.rb:14:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  rack (1.4.7) lib/rack/content_type.rb:19:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  rack (1.4.7) lib/rack/lint.rb:48:in `_call'
+  rack (1.4.7) lib/rack/lint.rb:36:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  rack (1.4.7) lib/rack/showexceptions.rb:24:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  rack (1.4.7) lib/rack/commonlogger.rb:33:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  rack (1.4.7) lib/rack/chunked.rb:43:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  rack (1.4.7) lib/rack/content_length.rb:14:in `call'
+  newrelic_rpm (3.17.2.327) lib/new_relic/agent/instrumentation/middleware_tracing.rb:96:in `call'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:562:in `process_client'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:658:in `worker_loop'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:508:in `spawn_missing_workers'
+  unicorn (5.2.0) lib/unicorn/http_server.rb:132:in `start'
+  unicorn (5.2.0) bin/unicorn:126:in `<top (required)>'
+  /home/hvz/.rbenv/versions/2.0.0-p247/bin/unicorn:23:in `load'
+  /home/hvz/.rbenv/versions/2.0.0-p247/bin/unicorn:23:in `<main>'
+
+
+Started GET "/" for 66.249.73.1 at 2017-10-30 14:24:28 -0400
+Processing by IndexController#root as HTML
+  Rendered games/_gamestats.html.haml (3.4ms)
+  Rendered index/root.html.haml within layouts/application (30.2ms)
+  Rendered index/_countdown.html.haml (1.3ms)
+Completed 200 OK in 79ms (Views: 31.4ms | ActiveRecord: 23.2ms)
+Started GET "/" for 129.22.1.18 at 2017-10-30 14:58:28 -0400
+Processing by IndexController#root as HTML
+  Rendered games/_gamestats.html.haml (3.1ms)
+  Rendered index/root.html.haml within layouts/application (26.3ms)
+  Rendered index/_countdown.html.haml (0.7ms)
+Completed 200 OK in 75ms (Views: 27.0ms | ActiveRecord: 24.7ms)
+Started GET "/people/login" for 129.22.1.18 at 2017-10-30 14:58:32 -0400
+Processing by PeopleController#login as HTML
+Redirected to https://login.case.edu/cas/login?service=http%3A%2F%2Fhvz.case.edu%2Fpeople%2Flogin
+Filter chain halted as CASClient::Frameworks::Rails::Filter rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 2.4ms)
+Started GET "/people/login?ticket=ST-286506-AjbIG9d2wa6cp5xbVKy4-ssop-cfd-1.cwru.edu" for 129.22.1.18 at 2017-10-30 14:58:32 -0400
+Processing by PeopleController#login as HTML
+  Parameters: {"ticket"=>"ST-286506-AjbIG9d2wa6cp5xbVKy4-ssop-cfd-1.cwru.edu"}
+Ticket "ST-286506-AjbIG9d2wa6cp5xbVKy4-ssop-cfd-1.cwru.edu" for service "http://hvz.case.edu/people/login" belonging to user "jol12" is VALID.
+Redirected to http://hvz.case.edu/
+Completed 302 Found in 55ms (ActiveRecord: 2.8ms)
+Started GET "/" for 129.22.1.18 at 2017-10-30 14:58:33 -0400
+Processing by IndexController#root as HTML
+  Rendered games/_gamestats.html.haml (3.8ms)
+  Rendered index/root.html.haml within layouts/application (30.2ms)
+  Rendered index/_countdown.html.haml (0.8ms)
+  Rendered index/_userloggedin.html.haml (16.9ms)
+Completed 200 OK in 109ms (Views: 41.4ms | ActiveRecord: 35.9ms)
+Started GET "/contact/new" for 129.22.1.18 at 2017-10-30 14:58:36 -0400
+Processing by ContactMessagesController#new as HTML
+  Rendered contact_messages/new.html.haml within layouts/application (9.6ms)
+  Rendered index/_countdown.html.haml (0.6ms)
+  Rendered index/_userloggedin.html.haml (17.7ms)
+Completed 200 OK in 44ms (Views: 28.2ms | ActiveRecord: 12.4ms)
+Started GET "/players" for 129.22.1.18 at 2017-10-30 14:59:11 -0400
+Processing by RegistrationsController#index as HTML
+  Rendered registrations/index.html.haml within layouts/application (683.6ms)
+  Rendered index/_countdown.html.haml (1.2ms)
+  Rendered index/_userloggedin.html.haml (17.9ms)
+Completed 200 OK in 823ms (Views: 702.6ms | ActiveRecord: 43.1ms)
+Started GET "/" for 158.85.81.121 at 2017-10-30 15:18:58 -0400
+Processing by IndexController#root as HTML
+  Rendered games/_gamestats.html.haml (3.4ms)
+  Rendered index/root.html.haml within layouts/application (27.0ms)
+  Rendered index/_countdown.html.haml (1.0ms)
+Completed 200 OK in 68ms (Views: 28.8ms | ActiveRecord: 20.1ms)
+Started GET "/" for 129.22.21.197 at 2017-10-30 15:47:48 -0400
+Processing by IndexController#root as HTML
+  Rendered games/_gamestats.html.haml (3.6ms)
+  Rendered index/root.html.haml within layouts/application (28.6ms)
+  Rendered index/_countdown.html.haml (0.8ms)
+Completed 200 OK in 73ms (Views: 29.7ms | ActiveRecord: 21.2ms)
+Started GET "/" for 66.249.69.122 at 2017-10-30 17:22:22 -0400
+Processing by IndexController#root as HTML
+  Rendered games/_gamestats.html.haml (3.0ms)
+  Rendered index/root.html.haml within layouts/application (36.0ms)
+  Rendered index/_countdown.html.haml (0.8ms)
+Completed 200 OK in 79ms (Views: 34.2ms | ActiveRecord: 25.0ms)
+Started GET "/games/12" for 66.249.69.122 at 2017-10-30 18:02:45 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"12"}
+Completed 304 Not Modified in 16ms (ActiveRecord: 7.7ms)
+Started GET "/games/12" for 129.22.156.69 at 2017-10-30 18:03:57 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"12"}
+Read fragment views/games/12-20170426042530/show (1.6ms)
+  Rendered games/show.html.haml within layouts/application (11.7ms)
+  Rendered index/_countdown.html.haml (0.5ms)
+Completed 200 OK in 464ms (Views: 161.0ms | ActiveRecord: 125.3ms)
+Started GET "/games/10" for 107.10.223.161 at 2017-10-30 18:29:50 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"10"}
+Read fragment views/games/10-20161013004114/show (1.6ms)
+  Rendered games/show.html.haml within layouts/application (11.9ms)
+  Rendered index/_countdown.html.haml (0.5ms)
+Completed 200 OK in 506ms (Views: 19.9ms | ActiveRecord: 162.6ms)
+Started GET "/" for 66.249.69.120 at 2017-10-30 18:48:01 -0400
+Processing by IndexController#root as HTML
+  Rendered games/_gamestats.html.haml (3.5ms)
+  Rendered index/root.html.haml within layouts/application (27.0ms)
+  Rendered index/_countdown.html.haml (0.8ms)
+Completed 200 OK in 75ms (Views: 30.1ms | ActiveRecord: 22.8ms)
+Started GET "/" for 129.22.21.197 at 2017-10-30 20:18:37 -0400
+Processing by IndexController#root as HTML
+  Rendered games/_gamestats.html.haml (3.6ms)
+  Rendered index/root.html.haml within layouts/application (28.1ms)
+  Rendered index/_countdown.html.haml (0.8ms)
+Completed 200 OK in 69ms (Views: 29.7ms | ActiveRecord: 20.5ms)
+Started GET "/" for 157.55.39.188 at 2017-10-30 20:29:59 -0400
+Processing by IndexController#root as */*
+  Rendered games/_gamestats.html.haml (3.5ms)
+  Rendered index/root.html.haml within layouts/application (27.6ms)
+  Rendered index/_countdown.html.haml (0.8ms)
+Completed 200 OK in 69ms (Views: 28.1ms | ActiveRecord: 21.0ms)
+Started GET "/" for 129.22.21.197 at 2017-10-31 00:12:05 -0400
+Processing by IndexController#root as HTML
+  Rendered games/_gamestats.html.haml (3.4ms)
+  Rendered index/root.html.haml within layouts/application (26.7ms)
+  Rendered index/_countdown.html.haml (0.8ms)
+Completed 200 OK in 67ms (Views: 27.5ms | ActiveRecord: 21.2ms)
+Started GET "/" for 192.5.110.7 at 2017-10-31 13:46:32 -0400
+Processing by IndexController#root as HTML
+  Rendered games/_gamestats.html.haml (3.0ms)
+  Rendered index/root.html.haml within layouts/application (25.7ms)
+  Rendered index/_countdown.html.haml (0.7ms)
+Completed 200 OK in 64ms (Views: 26.0ms | ActiveRecord: 20.0ms)
+Started GET "/" for 192.5.110.7 at 2017-10-31 13:47:07 -0400
+Processing by IndexController#root as HTML
+  Rendered games/_gamestats.html.haml (3.2ms)
+  Rendered index/root.html.haml within layouts/application (30.4ms)
+  Rendered index/_countdown.html.haml (0.7ms)
+Completed 200 OK in 85ms (Views: 31.1ms | ActiveRecord: 26.2ms)
+Started GET "/" for 192.5.110.4 at 2017-10-31 21:26:07 -0400
+Processing by IndexController#root as HTML
+  Rendered games/_gamestats.html.haml (4.8ms)
+  Rendered index/root.html.haml within layouts/application (34.1ms)
+  Rendered index/_countdown.html.haml (0.9ms)
+Completed 200 OK in 84ms (Views: 33.8ms | ActiveRecord: 23.4ms)
+Started GET "/" for 192.5.110.6 at 2017-10-31 22:49:36 -0400
+Processing by IndexController#root as HTML
+  Rendered games/_gamestats.html.haml (3.2ms)
+  Rendered index/root.html.haml within layouts/application (27.1ms)
+  Rendered index/_countdown.html.haml (0.7ms)
+Completed 200 OK in 232ms (Views: 26.1ms | ActiveRecord: 22.3ms)
+Started GET "/" for 129.22.21.193 at 2017-11-01 00:52:19 -0400
+Processing by IndexController#root as HTML
+  Rendered games/_gamestats.html.haml (3.4ms)
+  Rendered index/root.html.haml within layouts/application (29.0ms)
+  Rendered index/_countdown.html.haml (0.9ms)
+Completed 200 OK in 81ms (Views: 30.3ms | ActiveRecord: 21.8ms)
+Started GET "/" for 192.5.110.6 at 2017-11-01 10:41:13 -0400
+Processing by IndexController#root as HTML
+  Rendered games/_gamestats.html.haml (3.1ms)
+  Rendered index/root.html.haml within layouts/application (26.8ms)
+  Rendered index/_countdown.html.haml (1.1ms)
+Completed 200 OK in 84ms (Views: 27.0ms | ActiveRecord: 27.0ms)
+Connecting to database specified by database.yml
+Started GET "/" for 129.22.1.18 at 2017-11-01 16:05:00 -0400
+Processing by IndexController#root as HTML
+  Rendered games/_gamestats.html.haml (2.9ms)
+  Rendered index/root.html.haml within layouts/application (26.7ms)
+  Rendered index/_countdown.html.haml (0.8ms)
+Completed 200 OK in 68ms (Views: 27.0ms | ActiveRecord: 20.8ms)
+Started GET "/people/login" for 129.22.1.18 at 2017-11-01 16:05:03 -0400
+Processing by PeopleController#login as HTML
+Redirected to https://login.case.edu/cas/login?service=http%3A%2F%2Fhvz.case.edu%2Fpeople%2Flogin
+Filter chain halted as CASClient::Frameworks::Rails::Filter rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 2.2ms)
+Started GET "/people/login?ticket=ST-343231-kelwSfkiufccsfJoMupE-ssop-cfd-1.cwru.edu" for 129.22.1.18 at 2017-11-01 16:05:03 -0400
+Processing by PeopleController#login as HTML
+  Parameters: {"ticket"=>"ST-343231-kelwSfkiufccsfJoMupE-ssop-cfd-1.cwru.edu"}
+Ticket "ST-343231-kelwSfkiufccsfJoMupE-ssop-cfd-1.cwru.edu" for service "http://hvz.case.edu/people/login" belonging to user "rxr353" is VALID.
+Redirected to http://hvz.case.edu/
+Completed 302 Found in 52ms (ActiveRecord: 3.2ms)
+Started GET "/" for 129.22.1.18 at 2017-11-01 16:05:04 -0400
+Processing by IndexController#root as HTML
+  Rendered games/_gamestats.html.haml (3.1ms)
+  Rendered index/root.html.haml within layouts/application (25.5ms)
+  Rendered index/_countdown.html.haml (0.7ms)
+  Rendered index/_userloggedin.html.haml (17.4ms)
+Completed 200 OK in 99ms (Views: 36.1ms | ActiveRecord: 36.3ms)
+Started GET "/games" for 129.22.1.18 at 2017-11-01 16:05:07 -0400
+Processing by GamesController#index as HTML
+  Rendered games/index.html.haml within layouts/application (9.0ms)
+  Rendered index/_countdown.html.haml (0.5ms)
+  Rendered index/_userloggedin.html.haml (25.2ms)
+Completed 200 OK in 286ms (Views: 29.3ms | ActiveRecord: 72.7ms)
+Started GET "/games/new" for 129.22.1.18 at 2017-11-01 16:05:11 -0400
+Processing by GamesController#new as HTML
+  Rendered games/new.html.haml within layouts/application (31.0ms)
+  Rendered index/_countdown.html.haml (0.5ms)
+  Rendered index/_userloggedin.html.haml (17.9ms)
+Completed 200 OK in 64ms (Views: 49.2ms | ActiveRecord: 11.9ms)
+Started POST "/games" for 129.22.1.18 at 2017-11-01 16:05:39 -0400
+Processing by GamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BVlHER8lUbYaZ22Q9nO39MMD/etFz+TqMslAV3lRWyI=", "game"=>{"short_name"=>"test", "registration_begins(1i)"=>"2017", "registration_begins(2i)"=>"11", "registration_begins(3i)"=>"1", "registration_begins(4i)"=>"16", "registration_begins(5i)"=>"10", "registration_ends(1i)"=>"2017", "registration_ends(2i)"=>"11", "registration_ends(3i)"=>"1", "registration_ends(4i)"=>"16", "registration_ends(5i)"=>"15", "game_begins(1i)"=>"2017", "game_begins(2i)"=>"11", "game_begins(3i)"=>"1", "game_begins(4i)"=>"17", "game_begins(5i)"=>"05", "game_ends(1i)"=>"2017", "game_ends(2i)"=>"11", "game_ends(3i)"=>"1", "game_ends(4i)"=>"18", "game_ends(5i)"=>"05", "oz_reveal(1i)"=>"2017", "oz_reveal(2i)"=>"11", "oz_reveal(3i)"=>"1", "oz_reveal(4i)"=>"17", "oz_reveal(5i)"=>"17", "time_zone"=>"Eastern Time (US & Canada)"}, "commit"=>"Create This Game"}
+Redirected to http://hvz.case.edu/games
+Completed 302 Found in 63ms (ActiveRecord: 54.4ms)
+Started GET "/games" for 129.22.1.18 at 2017-11-01 16:05:39 -0400
+Processing by GamesController#index as HTML
+  Rendered games/index.html.haml within layouts/application (9.7ms)
+  Rendered index/_countdown.html.haml (0.5ms)
+  Rendered index/_userloggedin.html.haml (21.7ms)
+Completed 200 OK in 265ms (Views: 28.8ms | ActiveRecord: 78.8ms)
+Started GET "/" for 129.22.21.193 at 2017-11-01 18:10:40 -0400
+Processing by IndexController#root as HTML
+  Rendered games/_gamestats.html.haml (3.3ms)
+  Rendered index/root.html.haml within layouts/application (26.7ms)
+  Rendered index/_countdown.html.haml (0.7ms)
+Completed 200 OK in 75ms (Views: 27.6ms | ActiveRecord: 22.2ms)
+Started GET "/" for 129.22.1.18 at 2017-11-01 18:13:36 -0400
+Processing by IndexController#root as HTML
+  Rendered games/_gamestats.html.haml (3.0ms)
+  Rendered index/root.html.haml within layouts/application (28.2ms)
+  Rendered index/_countdown.html.haml (0.9ms)
+  Rendered index/_userloggedin.html.haml (23.0ms)
+Completed 200 OK in 259ms (Views: 42.3ms | ActiveRecord: 33.4ms)
+Started GET "/" for 129.22.1.18 at 2017-11-01 20:09:34 -0400
+Processing by IndexController#root as HTML
+  Rendered games/_gamestats.html.haml (3.1ms)
+  Rendered index/root.html.haml within layouts/application (29.4ms)
+  Rendered index/_countdown.html.haml (0.9ms)
+  Rendered index/_userloggedin.html.haml (25.2ms)
+Completed 200 OK in 101ms (Views: 44.7ms | ActiveRecord: 34.6ms)
+Started GET "/" for 129.22.21.197 at 2017-11-01 21:07:27 -0400
+Processing by IndexController#root as HTML
+  Rendered games/_gamestats.html.haml (3.5ms)
+  Rendered index/root.html.haml within layouts/application (27.8ms)
+  Rendered index/_countdown.html.haml (1.4ms)
+Completed 200 OK in 81ms (Views: 34.3ms | ActiveRecord: 20.7ms)
+Started GET "/games/15" for 129.22.1.18 at 2017-11-01 21:08:40 -0400
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"15"}
+Read fragment views/games/15-20171013201247/show (2.2ms)
+  Rendered games/show.html.haml within layouts/application (14.9ms)
+  Rendered index/_countdown.html.haml (0.5ms)
+Completed 200 OK in 544ms (Views: 25.8ms | ActiveRecord: 182.1ms)
+Started GET "/" for 129.22.1.19 at 2017-11-02 12:44:48 -0400
+Processing by IndexController#root as HTML
+  Rendered games/_gamestats.html.haml (3.2ms)
+  Rendered index/root.html.haml within layouts/application (26.6ms)
+  Rendered index/_countdown.html.haml (0.8ms)
+  Rendered index/_userloggedin.html.haml (17.9ms)
+Completed 200 OK in 93ms (Views: 36.7ms | ActiveRecord: 30.9ms)
+Started GET "/" for 129.22.21.197 at 2017-11-02 18:17:44 -0400
+Processing by IndexController#root as HTML
+  Rendered games/_gamestats.html.haml (3.1ms)
+  Rendered index/root.html.haml within layouts/application (26.4ms)
+  Rendered index/_countdown.html.haml (0.7ms)
+Completed 200 OK in 66ms (Views: 27.1ms | ActiveRecord: 20.4ms)
+Started GET "/" for 129.22.21.197 at 2017-11-02 19:16:04 -0400
+Processing by IndexController#root as HTML
+  Rendered games/_gamestats.html.haml (3.2ms)
+  Rendered index/root.html.haml within layouts/application (26.0ms)
+  Rendered index/_countdown.html.haml (0.7ms)
+Completed 200 OK in 68ms (Views: 26.0ms | ActiveRecord: 20.2ms)
+Started GET "/" for 129.22.21.197 at 2017-11-02 19:38:36 -0400
+Processing by IndexController#root as HTML
+  Rendered games/_gamestats.html.haml (3.6ms)
+  Rendered index/root.html.haml within layouts/application (27.5ms)
+  Rendered index/_countdown.html.haml (0.9ms)
+Completed 200 OK in 69ms (Views: 28.1ms | ActiveRecord: 20.9ms)
+Started GET "/" for 129.22.1.19 at 2017-11-03 08:56:39 -0400
+Processing by IndexController#root as HTML
+  Rendered games/_gamestats.html.haml (3.7ms)
+  Rendered index/root.html.haml within layouts/application (41.2ms)
+  Rendered index/_countdown.html.haml (0.8ms)
+Completed 200 OK in 206ms (Views: 40.5ms | ActiveRecord: 22.1ms)
+Started GET "/" for 129.22.1.19 at 2017-11-03 12:31:08 -0400
+Processing by IndexController#root as HTML
+  Rendered games/_gamestats.html.haml (3.9ms)
+  Rendered index/root.html.haml within layouts/application (28.3ms)
+  Rendered index/_countdown.html.haml (1.0ms)
+Completed 200 OK in 81ms (Views: 32.6ms | ActiveRecord: 24.5ms)
