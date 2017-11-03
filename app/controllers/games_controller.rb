@@ -57,7 +57,7 @@ class GamesController < ApplicationController
   end
 
   def create
-    @game = Game.new(params[:game])
+    @game = Game.new(game_params)
     if Game.current.id.nil?
       @game.is_current = true
     end
@@ -70,6 +70,9 @@ class GamesController < ApplicationController
     end
   end
 
+  def game_params
+    params.require(:game).permit( :short_name, :registration_begins, :registration_ends,  :game_begins, :game_ends, :oz_reveal)
+  end
   def update
     @game = Game.find(params[:id])
     if @game.update_attributes(params[:game])

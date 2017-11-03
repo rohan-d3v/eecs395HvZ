@@ -12,8 +12,9 @@ private
   def check_signature
     return unless new_record?
 
-    return if signature.try(:downcase) == person.name.downcase
+    return if signature != person.name
 
     errors.add(:signature, 'must match your name as it appears at the top')
+
   end
 end

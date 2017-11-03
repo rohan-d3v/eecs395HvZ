@@ -26,7 +26,7 @@ class MissionsController < ApplicationController
   end
 
   def create
-    @mission = Mission.new(params[:mission])
+    @mission = Mission.new(mission_params)
     @mission.game = @current_game
     if @mission.save
       redirect_to list_missions_path
@@ -34,6 +34,10 @@ class MissionsController < ApplicationController
       flash[:error] = @mission.errors.full_messages.first
       redirect_to new_mission_path
     end
+  end
+
+  def mission_params
+    params.require(:mission).permit( :start, :end, :description, :title, :storyline)
   end
 
   def index

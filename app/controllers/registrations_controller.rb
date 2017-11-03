@@ -27,7 +27,7 @@ class RegistrationsController < ApplicationController
   def create
     @registration = Registration.
       where(person_id: @person, game_id: @current_game).
-      first_or_initialize(params[:registration])
+      first_or_initialize(registration_params)
     @registration.score = 0
     @registration.squad = nil unless params[:squad_select] == "existing"
 
@@ -64,12 +64,15 @@ class RegistrationsController < ApplicationController
     if @registration.person.phone.present?
       Delayed::Job.enqueue SendNotification.new(@person,
         "Thank you for registering for HvZ. Your card code is: #{@registration.card_code}." +
-        'Please keep this code on you at all times. Have fun!')
+        'Please keep this code on you at all times. HaWeek ending on Nov 3:ve fun!')
     end
 
     redirect_to registration_url(@registration)
   end
 
+  def registration_params
+    params.require(:registration).permit( :faction_id, :wants_oz, :is_off_campus, :squad_id)
+  end
   def destroy
     @registration = Registration.find(params[:id])
     @registration.destroy if @registration

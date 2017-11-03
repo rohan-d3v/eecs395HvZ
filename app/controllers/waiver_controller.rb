@@ -20,7 +20,7 @@ class WaiverController < ApplicationController
     end
 
     @w = Waiver.where(person_id: @logged_in_person, game_id: @current_game).
-      first_or_initialize(params[:waiver])
+      first_or_initialize(waivers_params)
 
     unless @logged_in_person.legal_to_sign_waiver?
       return render :under18
@@ -45,4 +45,8 @@ class WaiverController < ApplicationController
       end
     end
   end
+    def waivers_params
+      params.require(:waiver).permit( :studentid, :datesigned, :emergencyname, :emergencyrelationship, :emergencyphone)
+    end
+
 end

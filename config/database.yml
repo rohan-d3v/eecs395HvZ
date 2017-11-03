@@ -4,9 +4,9 @@ development:
   adapter: postgresql
   host: localhost
   port: 5432
-  username: hvz_dev
-  password: hvz_dev
-  database: hvz_dev
+  username: hvz_development
+  password: password 
+  database: hvz_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -15,14 +15,14 @@ test:
   adapter: postgresql
   host: localhost
   port: 5432
-  username: hvz_test
-  password: hvz_test
-  database: hvz_test
+  username: hvz
+  password: password
+  database: hvz
 
 production:
   adapter: postgresql
-  host: localhost
+  host: 35.163.170.184
   port: 5432
-  username: hvz_production
-  password: hvz_production
-  database: hvz_production
+  username: hvz_prod
+  password: password
+  database: hvz_prod

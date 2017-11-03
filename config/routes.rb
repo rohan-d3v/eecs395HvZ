@@ -4,6 +4,14 @@ Hvz::Application.routes.draw do
   get "check_ins/create", :as => "check_in"
   get "feeds/create"
 
+  # rest api
+  namespace :api do
+    namespace :v1 do
+      resources :missions#, only: [:index, :show] #:create, :show, :update, :destroy]
+      resources :people#, #only: [:index, :show] #:create, :show, :update, :destroy]
+    end
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
   match "/people/login/", to: "people#login", via: :all
