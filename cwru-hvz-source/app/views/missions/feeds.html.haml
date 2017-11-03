@@ -1,0 +1,34 @@
+%h2.dink Mission Feeds
+Note, although mission feeds in the real game are caused by a specific zombie, these feeds will not be attributed to a zombie and
+are not counted towards any kill totals or point calculations.
+=form_for(@feed,:remote=>:true, :update=>"feeds") do |f|
+  %table
+    %tbody
+      %tr
+        %td Player Name:
+        %td
+          =f.hidden_field :person_id
+          =f.autocomplete_field :person_name, autocomplete_person_name_missions_path, :id_element=>"#feed_person_id"
+          =f.hidden_field :mission_id, :value => @feed.mission.id
+      %tr
+        %td Feed Time:
+        %td
+          %b
+            =@feed.mission.end.strftime("%A @ %I:%M %p")
+          (to change this time, change the
+          =link_to("mission end time",edit_mission_url(@feed.mission))+")"
+      %tr
+        %td Mass Feeds?
+        %td
+          .admin=link_to "Feed The Whole Horde", feeds_create_url(:mass_feed => 'true', :mission_id => @feed.mission_id), :confirm => "Are you sure you wish to feed the whole horde?"
+.span-10#feeds
+  =render :partial => "missionfeeds"
+.span-10#need_feeding
+  %h2.dink Need To Be Fed:
+  - @need_feeding.each do |r|
+    - if @present_zombies.include?(r)
+      %b= r.person.name
+    - else
+      = r.person.name
+    (#{(r.time_until_death/1.hour).ceil} hours, #{r.attendances.length} missions, #{r.tagged.length} tags, #{r.score} points)
+    %br

@@ -1,0 +1,74 @@
+%h2.dink
+  = @current_game.short_name + " Registration (Step 2 of 3)"
+%div.registration
+  = form_for(@waiver, url: waivers_path(@logged_in_person, next: params[:next])) do |f|
+    %div.span-10
+      %table
+        %tr
+          %td
+            Name:
+          %td
+            =text_field_tag nil, @logged_in_person.name, {:disabled => true, :size=>15}
+        = fields_for :person do |g|
+          %tr
+            %td{ style: 'width: 75px' }
+              = g.label :date_of_birth, 'Date Of Birth:'
+            %td
+              = g.date_select :date_of_birth, order: [:month, :day, :year],
+                start_year: 1940, end_year: Time.now.year-14
+    %div.span-1
+    %div.span-10
+      =f.label :studentid, "Student ID:"
+      =f.text_field :studentid
+    %div.span-22.last.clear
+      I,
+      %b=@logged_in_person.name
+      am participating in the Big Games Club's Humans vs Zombies game on Friday, March 24 – Friday, March 31, 2017 all day. My participation may include some risks. I am aware of the risks that may be encountered during this program and I understand that the risks may include personal injury and damage to property.
+      %br
+      I have been informed of risks that may be encountered during this program and if I have any questions about the activity's content, nature, risks or hazards, I have contacted the activity's coordinator and have discussed those questions to my satisfaction. I understand that my participation in this activity does not require travel but consists of game play on Case Western Reserve University’s campus and may involve exposure to risk of personal injury or damage to property.
+
+      As a condition of participating in this activity, I agree to the following:
+      = fields_for :confirmation do |g|
+        %table
+          %tr
+            %td{:style=>"background-color:#58FF3A"}=g.check_box :chk1
+            %td
+              1. I am physically capable of participating in this activity. I understand that I am responsible for any health and accident insurance which I may deem necessary.
+          %tr
+            %td{:style=>"background-color:#58FF3A"}=g.check_box :chk2
+            %td
+              2. I agree to abide by all rules and regulations set forth by the facilitators of the Humans vs. Zombies game. Failure to follow these rules may result in my immediate dismissal from the game.
+          %tr
+            %td{:style=>"background-color:#58FF3A"}=g.check_box :chk3
+            %td
+              3. In consideration of being granted the opportunity to participate in this activity and use services and facilities furnished or made available by Case Western Reserve University as well as the assistance and advice of employees of the University, I hereby release and forever discharge Case Western Reserve University, the Office of Student Activities and Leadership; the Undergraduate Student Government, the Big Games Club and its trustees, officers, employees, and agents from all legal claims for injuries, damages, or losses of any kind, which may arise out of my participation in this program, other than those claims directly attributable to the grossly negligent acts or omissions of Case Western Reserve University, or its trustees, officers or employees.
+          %tr
+            %td{:style=>"background-color:#58FF3A"}=g.check_box :chk4
+            %td
+              4. I agree to comply with all regulations, rules and policies of Case Western Reserve University while participating in this activity. I fully acknowledge that I am responsible for following all policies and procedures as set forth by the 2016- 2017 Student Services Guide. I understand that I am responsible for any medical or other personal insurance that I may deem necessary. I also understand that Case Western Reserve University is not responsible for my safety under any circumstances.
+
+      I certify that I have fully read this release and that I understand its terms and conditions and agree to be bound by them. I certify that I am over the age of eighteen and have executed this agreement of my own free will. I certify that
+      I have read #{link_to 'the full and complete rules', rules_game_path(Game.current)}.
+      %div.span-13
+        =f.label :signature, "Signature (type your name as it reads above):"
+        =f.text_field :signature
+      %div.span-8
+        =f.label :datesigned, "Date Signed:"
+        =f.date_select :datesigned
+      %div.span-12
+        %table
+          %thead
+            %th{:colspan=>"2"} Emergency Contact Information:
+          %tbody
+            %tr
+              %td=f.label :emergencyname, "Emergency Contact:"
+              %td=f.text_field :emergencyname
+            %tr
+              %td=f.label :emergencyrelationship, "Relationship:"
+              %td=f.text_field :emergencyrelationship
+            %tr
+              %td=f.label :emergencyphone, "Phone Number:"
+              %td=f.text_field :emergencyphone
+    %div.span-22
+      =f.submit "Onwards! (Continue Registration Process)",
+        confirm: "Have you actually read the full rules? Please also show up to one of the rules meetings. Wednesday 3/22 or Thursday 3/23 in Schmitt!"
