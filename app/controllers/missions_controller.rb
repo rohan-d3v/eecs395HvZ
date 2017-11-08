@@ -7,7 +7,7 @@ class MissionsController < ApplicationController
   end
 
   def attendance
-    @mission = Mission.find(params[:id], include: { game: { registrations: :person } })
+    @mission = Mission.includes({ game: { registrations: :person } }).find_by(:id => params[:id])
     @game = @mission.game
   end
 
