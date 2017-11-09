@@ -32,6 +32,7 @@ Parameter and Create Issue: missions_controller.rb (CLOSED/FIXED)</br>
 </br>
 
 Bugs discovered and/or fixed week ending Nov 10:
+
 Game Tools Issue: Null game upon cloning source (CLOSED/FIXED)</br>
 Mission attendance breaks the website: missions_controller.rb (CLOSED/FIXED)</br>
 Parameter, Create and Update Issue: people_controller.rb (CLOSED/FIXED)</br>
