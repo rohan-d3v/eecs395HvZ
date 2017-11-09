@@ -43,8 +43,4 @@ NoMethodError in Missions#attendance (CLOSED/FIXED)</br>
 
 NoMethodError in TagsController#create (OPEN) </br>
 Missions don't give you the option to enter names for attendance: Missions_controller.rb (OPEN)</br>
-<<<<<<< HEAD
-=======
-</br>
 NoMethodError in TagsController#create (OPEN)
->>>>>>> 0d993c7002ddfbf375b31947ad1d833b93bb0c68
