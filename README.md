@@ -30,5 +30,12 @@ Student ID always considered blank: waiver_controller.rb (CLOSED/FIXED)</br>
 Defective code and multiple errors: waiver.rb (CLOSED/FIXED)</br>
 Parameter and Create Issue: missions_controller.rb (CLOSED/FIXED)</br>
 </br>
-Game Tools Issue: Null game upon cloning source (workaround has been created: temporary solution)</br>
-Mission attendance breaks the website: missions_controller.rb (OPEN)</br>
+
+Bugs discovered and/or fixed week ending Nov 10:
+Game Tools Issue: Null game upon cloning source (CLOSED/FIXED)</br>
+Mission attendance breaks the website: missions_controller.rb (CLOSED/FIXED)</br>
+Parameter, Create and Update Issue: people_controller.rb (CLOSED/FIXED)</br>
+NoMethodError in TagsController#new (CLOSED/FIXED) </br>
+</br>
+
+NoMethodError in TagsController#create (OPEN)
