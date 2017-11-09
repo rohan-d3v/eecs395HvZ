@@ -37,15 +37,12 @@ Game Tools Issue: Null game upon cloning source (CLOSED/FIXED)</br>
 Mission attendance breaks the website: missions_controller.rb (CLOSED/FIXED)</br>
 Parameter, Create and Update Issue: people_controller.rb (CLOSED/FIXED)</br>
 NoMethodError in TagsController#new (CLOSED/FIXED) </br>
-<<<<<<< HEAD
 Game doesn't update automatically: Delayed jobs/ worker not running (CLOSED/FIXED)</br>
 NoMethodError in Missions#attendance (CLOSED/FIXED)</br>
 </br>
 
 NoMethodError in TagsController#create (OPEN) </br>
 Missions don't give you the option to enter names for attendance: Missions_controller.rb (OPEN)</br>
-=======
 </br>
 
 NoMethodError in TagsController#create (OPEN)
->>>>>>> 6b9af83b4ee4e6897ed1af823f067b0fc0aabc93
