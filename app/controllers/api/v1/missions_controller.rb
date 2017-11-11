@@ -1,6 +1,5 @@
 class Api::V1::MissionsController < ApplicationController
   before_filter :check_admin, :except => [ :show, :index ]
-  #respond_to :json
   protect_from_forgery with: :null_session
   before_action :destroy_session
 
@@ -16,16 +15,7 @@ class Api::V1::MissionsController < ApplicationController
 
   api! 'List of missions'
   def index
-    # if params[:follower_id]
-    #   users = User.find(params[:follower_id]).followers
-    # elsif params[:following_id]
-    #   users = User.find(params[:following_id]).following
-    # else
     missions = Mission.all
-    # end
-    # users = apply_filters(users, params)
-    # users = paginate(users)
-    # users = policy_scope(users)
     render(
       json: ActiveModel::ArraySerializer.new(
         missions,

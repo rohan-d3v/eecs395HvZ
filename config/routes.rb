@@ -5,7 +5,6 @@ Hvz::Application.routes.draw do
   get "feeds/create"
 
   # rest api
-  apipie # documentation
   namespace :api do
     namespace :v1 do
       resources :missions , only: [:index, :show] #:create, :update, :destroy]
@@ -20,6 +19,9 @@ Hvz::Application.routes.draw do
       end
     end
   end
+  apipie # generate documentation
+  # static documentation (rake apipie:static)
+  #match "/doc", to: "doc/"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

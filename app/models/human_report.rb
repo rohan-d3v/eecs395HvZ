@@ -4,5 +4,5 @@ class HumanReport < ActiveRecord::Base
             :time_sighted, :num_humans, :typical_mag_size
             :presence => true
 
-  #attr_accessible :location_lat, :location_long, :num_humans, :typical_mag_size # The user-modifiable fields
+  #attr_accessible :location_lat, :location_long, :num_humans, :typical_mag_size, :time_sighted # The user-modifiable fields
 end
