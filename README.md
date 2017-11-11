@@ -14,7 +14,7 @@ Website: http://ec2-35-163-170-184.us-west-2.compute.amazonaws.com
 <b>This code was initially pulled from cwru-hvz-source:</b> https://github.com/cwru-hvz-core/cwru-hvz-source.git
 The code has been found to be extremely defective and is currently being modified
 The deployment instructions are outdated, incomplete and not useful and is in the process of being/has been updated
-The rails app itself was extremely outdated and was using a not recommended version with nginx and unicorn. 
+The rails app itself was extremely outdated and was using a not recommended version with nginx and unicorn.
 It has been switched over to the latest version at this point
 
 If the gems aren't the latest in my code update, they are the latest possible that are still compatible with the code and will be adjusted as the code is re-written
@@ -33,6 +33,7 @@ Parameter and Create Issue: missions_controller.rb (CLOSED/FIXED)</br>
 
 Bugs discovered and/or fixed week ending Nov 10:
 
+<<<<<<< HEAD
 
 To get this running, pull down the source code and then run:
 
@@ -84,7 +85,3 @@ Parameter, Create and Update Issue: people_controller.rb (CLOSED/FIXED)</br>
 NoMethodError in TagsController#new (CLOSED/FIXED) </br>
 Game doesn't update automatically: Delayed jobs/ worker not running (CLOSED/FIXED)</br>
 NoMethodError in Missions#attendance (CLOSED/FIXED)</br>
-</br>
-
-NoMethodError in TagsController#create (OPEN) </br>
-Missions don't give you the option to enter names for attendance: Missions_controller.rb (OPEN)</br>
