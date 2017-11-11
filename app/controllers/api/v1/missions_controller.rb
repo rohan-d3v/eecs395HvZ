@@ -8,11 +8,13 @@ class Api::V1::MissionsController < ApplicationController
     request.session_options[:skip] = true
   end
 
+  api! 'A specific mission'
   def show
     mission = Mission.find(params[:id])
     render json: Api::V1::MissionSerializer.new(mission).to_json
   end
 
+  api! 'List of missions'
   def index
     # if params[:follower_id]
     #   users = User.find(params[:follower_id]).followers

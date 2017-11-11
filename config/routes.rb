@@ -5,12 +5,17 @@ Hvz::Application.routes.draw do
   get "feeds/create"
 
   # rest api
+  apipie # documentation
   namespace :api do
     namespace :v1 do
-      resources :missions #, only: [:index, :show] #:create, :show, :update, :destroy]
-      resources :people #, #only: [:index, :show] #:create, :show, :update, :destroy]
-      resources :games #, #only: [:index, :show] #:create, :show, :update, :destroy]
-      resources :registrations #, #only: [:index, :show] #:create, :show, :update, :destroy]
+      resources :missions , only: [:index, :show] #:create, :show, :update, :destroy]
+      resources :people, only: [:index, :show] #:create, :show, :update, :destroy]
+      resources :games, only: [:index, :show] #:create, :show, :update, :destroy]
+      resources :registrations, only: [:index, :show] do
+        collection do
+          get "by_faction/:faction" => "registrations#by_faction"
+        end
+      end
     end
   end
 

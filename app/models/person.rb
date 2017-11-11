@@ -1,5 +1,5 @@
 class Person < ActiveRecord::Base
-  has_many :infractions # Infractions submitted by this admin
+  has_many :infractions, foreign_key: 'admin_id' # Infractions submitted by this admin
   has_many :registrations
   has_many :waivers
   validates :caseid, :presence => true

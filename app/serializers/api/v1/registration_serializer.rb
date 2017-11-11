@@ -6,10 +6,10 @@ class Api::V1::RegistrationSerializer < Api::V1::BaseSerializer
 
   has_many :infractions
   has_many :feeds
-  has_many :missions#, :class_name => "Attendance"
+  has_many :missions, :class_name => "Attendance"
   #has_many :has_fed#, :foreign_key => "feeder_id"
-  has_many :tagged#, :foreign_key => "tagger_id", :class_name => "Tag"
-  has_many :taggedby#, :foreign_key => "tagee_id", :class_name => "Tag"
+  has_many :tagged, :foreign_key => "tagger_id", :class_name => "Tag"
+  has_many :taggedby, :foreign_key => "tagee_id", :class_name => "Tag"
   has_many :check_ins
   has_many :bonus_codes
   has_many :attendances

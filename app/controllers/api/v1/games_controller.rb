@@ -8,11 +8,13 @@ class Api::V1::GamesController < ApplicationController
     request.session_options[:skip] = true
   end
 
+  api! 'A specific game'
   def show
     game = Game.find(params[:id])
     render json: Api::V1::GameSerializer.new(game).to_json
   end
 
+  api! 'List of games'
   def index
     games = Game.all.order(created_at: :asc)
     render(

@@ -1,11 +1,15 @@
-class Api::V1::BaseController < ApplicationController
-  #include Pundit
-  #include ActiveHashRelation
+# documentation for api doc generator (api!) at https://github.com/Apipie/apipie-rails
 
+class Api::V1::BaseController < ApplicationController
+  resource_description do
+    api_version '1'
+    formats ['json']
+    short 'REST API for CWRU HvZ'
+    description 'REST API for CWRU HvZ'
+  end
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :null_session
-
   before_action :destroy_session
 
   rescue_from ActiveRecord::RecordNotFound, with: :not_found!

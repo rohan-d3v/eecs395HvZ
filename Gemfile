@@ -38,6 +38,7 @@ gem 'redis-throttle', git: 'git://github.com/andreareginato/redis-throttle.git'
 gem 'pundit', '~> 0.3.0'
 gem 'active_model_serializers', '0.9.2'
 gem 'kaminari', '~> 0.16.1'
+gem 'apipie-rails'
 #gem 'rspec-api_helpers', github: 'kollegorna/rspec-api_helpers'
 
 group :development, :test do

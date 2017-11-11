@@ -8,11 +8,18 @@ class Api::V1::PeopleController < ApplicationController
     request.session_options[:skip] = true
   end
 
+  api! 'A specific person'
   def show
-    people = Person.find(params[:id])
-    render json: Api::V1::PersonSerializer.new(people).to_json
+    person = Person.find(params[:id])
+    render json: Api::V1::PersonSerializer.new(person).to_json
   end
 
+  # need to authenticate this one
+  # def update
+  #   person = Person.find(params[:id])
+  # end
+
+  api! 'List of people'
   def index
     people = Person.all.order(created_at: :asc)
     render(
