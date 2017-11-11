@@ -16,7 +16,7 @@ class Api::V1::GamesController < ApplicationController
 
   api! 'List of games'
   def index
-    games = Game.all.order(created_at: :asc)
+    games = Game.all
     render(
       json: ActiveModel::ArraySerializer.new(
         games,

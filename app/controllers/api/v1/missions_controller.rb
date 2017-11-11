@@ -21,7 +21,7 @@ class Api::V1::MissionsController < ApplicationController
     # elsif params[:following_id]
     #   users = User.find(params[:following_id]).following
     # else
-    missions = Mission.all.order(created_at: :asc)
+    missions = Mission.all
     # end
     # users = apply_filters(users, params)
     # users = paginate(users)

@@ -16,7 +16,7 @@ class Api::V1::RegistrationsController < ApplicationController
 
   api! 'List of registrations'
   def index
-    registrations = Registration.all.order(created_at: :asc)
+    registrations = Registration.all
     render_registrations registrations
   end
 
@@ -38,15 +38,15 @@ class Api::V1::RegistrationsController < ApplicationController
 
     faction = params[:faction]
     if (faction == Registration::HUMAN_FACTION.to_s or faction.downcase == "human")
-      registrations = Registration.where(faction_id: Registration::HUMAN_FACTION).order(created_at: :asc)
+      registrations = Registration.where(faction_id: Registration::HUMAN_FACTION)
       render_registrations registrations
 
     elsif (faction == Registration::ZOMBIE_FACTION.to_s or faction.downcase == "zombie")
-      registrations = Registration.where(faction_id: Registration::ZOMBIE_FACTION).order(created_at: :asc)
+      registrations = Registration.where(faction_id: Registration::ZOMBIE_FACTION)
       render_registrations registrations
 
     elsif (faction == Registration::DECEASED_FACTION.to_s or faction.downcase == "deceased")
-      registrations = Registration.where(faction_id: Registration::DECEASED_FACTION).order(created_at: :asc)
+      registrations = Registration.where(faction_id: Registration::DECEASED_FACTION)
       render_registrations registrations
     else
       render_error

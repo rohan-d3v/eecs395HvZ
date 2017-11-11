@@ -21,7 +21,7 @@ class Api::V1::PeopleController < ApplicationController
 
   api! 'List of people'
   def index
-    people = Person.all.order(created_at: :asc)
+    people = Person.all
     render(
       json: ActiveModel::ArraySerializer.new(
         people,
