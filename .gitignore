@@ -7,3 +7,8 @@ config/private.rb
 *.swp
 .sass-cache
 .env
+
+# lock files
+*.lock
+~*
+*~
