@@ -7,8 +7,10 @@ Hvz::Application.routes.draw do
   # rest api
   namespace :api do
     namespace :v1 do
-      resources :missions#, only: [:index, :show] #:create, :show, :update, :destroy]
-      resources :people#, #only: [:index, :show] #:create, :show, :update, :destroy]
+      resources :missions #, only: [:index, :show] #:create, :show, :update, :destroy]
+      resources :people #, #only: [:index, :show] #:create, :show, :update, :destroy]
+      resources :games #, #only: [:index, :show] #:create, :show, :update, :destroy]
+      resources :registrations #, #only: [:index, :show] #:create, :show, :update, :destroy]
     end
   end
 

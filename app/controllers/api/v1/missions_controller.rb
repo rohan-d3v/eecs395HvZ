@@ -27,7 +27,7 @@ class Api::V1::MissionsController < ApplicationController
     render(
       json: ActiveModel::ArraySerializer.new(
         missions,
-        #each_serializer: Api::V1::MissionSerializer,
+        each_serializer: Api::V1::MissionSerializer,
         root: 'missions',
         #meta: meta_attributes(missions)
       )
