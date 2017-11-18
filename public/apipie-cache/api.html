@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>API documentation</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link type='text/css' rel='stylesheet' href='./api/stylesheets/bundled/bootstrap.min.css'/>
+<link type='text/css' rel='stylesheet' href='./api/stylesheets/bundled/prettify.css'/>
+<link type='text/css' rel='stylesheet' href='./api/stylesheets/bundled/bootstrap-responsive.min.css'/>
+  <link type='text/css' rel='stylesheet' href='./api/stylesheets/application.css'/>
+  <!-- IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div id='container'>
+        <ul class='breadcrumb'>
+  <li class='active'><a href='./api/1.0.html'>CWRU HvZ API 1.0</a></li>
+  
+</ul>
+
+<div>
+<p>CWRU HvZ api documentation</p>
+</div>
+
+<h1 class='page-header'>Resources</h1>
+
+  <h2>
+    <a href='./api/1.0/games.html'>
+      Games
+    </a>
+    <br>
+    <small></small>
+  </h2>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Resource</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+          <tr>
+            <td>
+              <a href='./api/1.0/games/show.html'>GET /api/v1/games/:id</a>
+            </td>
+            <td width='60%'>A specific game</td>
+          </tr>
+          <tr>
+            <td>
+              <a href='./api/1.0/games/index.html'>GET /api/v1/games</a>
+            </td>
+            <td width='60%'>List of games</td>
+          </tr>
+    </tbody>
+  </table>
+  <h2>
+    <a href='./api/1.0/human_reports.html'>
+      Human reports
+    </a>
+    <br>
+    <small></small>
+  </h2>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Resource</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+          <tr>
+            <td>
+              <a href='./api/1.0/human_reports/show.html'>GET /api/v1/human_reports/:id</a>
+            </td>
+            <td width='60%'>A specific human report</td>
+          </tr>
+          <tr>
+            <td>
+              <a href='./api/1.0/human_reports/index.html'>GET /api/v1/human_reports</a>
+            </td>
+            <td width='60%'>List of human reports</td>
+          </tr>
+          <tr>
+            <td>
+              <a href='./api/1.0/human_reports/create.html'>POST /api/v1/human_reports</a>
+            </td>
+            <td width='60%'>Create a human report</td>
+          </tr>
+          <tr>
+            <td>
+              <a href='./api/1.0/human_reports/destroy.html'>DELETE /api/v1/human_reports/:id</a>
+            </td>
+            <td width='60%'>Destroy a human report</td>
+          </tr>
+    </tbody>
+  </table>
+  <h2>
+    <a href='./api/1.0/missions.html'>
+      Missions
+    </a>
+    <br>
+    <small></small>
+  </h2>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Resource</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+          <tr>
+            <td>
+              <a href='./api/1.0/missions/show.html'>GET /api/v1/missions/:id</a>
+            </td>
+            <td width='60%'>A specific mission</td>
+          </tr>
+          <tr>
+            <td>
+              <a href='./api/1.0/missions/index.html'>GET /api/v1/missions</a>
+            </td>
+            <td width='60%'>List of missions</td>
+          </tr>
+    </tbody>
+  </table>
+  <h2>
+    <a href='./api/1.0/people.html'>
+      People
+    </a>
+    <br>
+    <small></small>
+  </h2>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Resource</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+          <tr>
+            <td>
+              <a href='./api/1.0/people/show.html'>GET /api/v1/people/:id</a>
+            </td>
+            <td width='60%'>A specific person</td>
+          </tr>
+          <tr>
+            <td>
+              <a href='./api/1.0/people/index.html'>GET /api/v1/people</a>
+            </td>
+            <td width='60%'>List of people</td>
+          </tr>
+    </tbody>
+  </table>
+  <h2>
+    <a href='./api/1.0/registrations.html'>
+      Registrations
+    </a>
+    <br>
+    <small></small>
+  </h2>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Resource</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+          <tr>
+            <td>
+              <a href='./api/1.0/registrations/show.html'>GET /api/v1/registrations/:id</a>
+            </td>
+            <td width='60%'>A specific registration</td>
+          </tr>
+          <tr>
+            <td>
+              <a href='./api/1.0/registrations/index.html'>GET /api/v1/registrations</a>
+            </td>
+            <td width='60%'>List of registrations</td>
+          </tr>
+          <tr>
+            <td>
+              <a href='./api/1.0/registrations/by_faction.html'>GET /api/v1/registrations/by_faction/:faction</a>
+            </td>
+            <td width='60%'>Get all registrations that are part of a certain faction</td>
+          </tr>
+    </tbody>
+  </table>
+  <h2>
+    <a href='./api/1.0/zombie_reports.html'>
+      Zombie reports
+    </a>
+    <br>
+    <small></small>
+  </h2>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Resource</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+          <tr>
+            <td>
+              <a href='./api/1.0/zombie_reports/show.html'>GET /api/v1/zombie_reports/:id</a>
+            </td>
+            <td width='60%'>A specific zombie report</td>
+          </tr>
+          <tr>
+            <td>
+              <a href='./api/1.0/zombie_reports/index.html'>GET /api/v1/zombie_reports</a>
+            </td>
+            <td width='60%'>List of zombie reports</td>
+          </tr>
+          <tr>
+            <td>
+              <a href='./api/1.0/zombie_reports/create.html'>POST /api/v1/zombie_reports</a>
+            </td>
+            <td width='60%'>Create a zombie report</td>
+          </tr>
+          <tr>
+            <td>
+              <a href='./api/1.0/zombie_reports/destroy.html'>DELETE /api/v1/zombie_reports/:id</a>
+            </td>
+            <td width='60%'>Destroy a zombie report</td>
+          </tr>
+    </tbody>
+  </table>
+
+
+        
+      </div>
+    </div>
+    <hr>
+    <footer></footer>
+  </div>
+  <script type='text/javascript' src='./api/javascripts/bundled/jquery.js'></script>
+<script type='text/javascript' src='./api/javascripts/bundled/bootstrap-collapse.js'></script>
+<script type='text/javascript' src='./api/javascripts/bundled/prettify.js'></script>
+<script type='text/javascript' src='./api/javascripts/apipie.js'></script>
+</body>
+</html>
