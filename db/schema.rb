@@ -32,6 +32,9 @@ ActiveRecord::Schema.define(version: 20171111205647) do
     t.datetime "updated_at"
   end
 
+  add_index "attendances", ["mission_id"], name: "index_attendances_on_mission_id", using: :btree
+  add_index "attendances", ["registration_id"], name: "index_attendances_on_registration_id", using: :btree
+
   create_table "bonus_codes", force: :cascade do |t|
     t.string   "code"
     t.integer  "points"
@@ -41,12 +44,16 @@ ActiveRecord::Schema.define(version: 20171111205647) do
     t.datetime "updated_at"
   end
 
+  add_index "bonus_codes", ["game_id", "code"], name: "index_bonus_codes_on_game_id_and_code", using: :btree
+
   create_table "check_ins", force: :cascade do |t|
     t.integer  "registration_id"
     t.string   "hostname"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "check_ins", ["registration_id"], name: "index_check_ins_on_registration_id", using: :btree
 
   create_table "contact_messages", force: :cascade do |t|
     t.string   "from"
@@ -59,6 +66,8 @@ ActiveRecord::Schema.define(version: 20171111205647) do
     t.boolean  "visible",    default: true
     t.text     "note"
   end
+
+  add_index "contact_messages", ["game_id", "visible"], name: "index_contact_messages_on_game_id_and_visible", using: :btree
 
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer  "priority",   default: 0
@@ -85,6 +94,9 @@ ActiveRecord::Schema.define(version: 20171111205647) do
     t.integer  "mission_id"
   end
 
+  add_index "feeds", ["mission_id"], name: "index_feeds_on_mission_id", using: :btree
+  add_index "feeds", ["tag_id"], name: "index_feeds_on_tag_id", using: :btree
+
   create_table "games", force: :cascade do |t|
     t.string   "short_name"
     t.datetime "registration_begins"
@@ -100,8 +112,10 @@ ActiveRecord::Schema.define(version: 20171111205647) do
     t.datetime "oz_reveal"
   end
 
+  add_index "games", ["is_current"], name: "index_games_on_is_current", using: :btree
+
   create_table "human_reports", force: :cascade do |t|
-    t.integer  "game_id_id"
+    t.integer  "game_id"
     t.string   "location_lat"
     t.string   "location_long"
     t.integer  "num_humans"
@@ -119,6 +133,8 @@ ActiveRecord::Schema.define(version: 20171111205647) do
     t.boolean  "nullified",       default: false
   end
 
+  add_index "infractions", ["registration_id"], name: "index_infractions_on_registration_id", using: :btree
+
   create_table "missions", force: :cascade do |t|
     t.integer  "game_id"
     t.datetime "start"
@@ -131,6 +147,8 @@ ActiveRecord::Schema.define(version: 20171111205647) do
     t.text     "storyline"
   end
 
+  add_index "missions", ["game_id"], name: "index_missions_on_game_id", using: :btree
+
   create_table "people", force: :cascade do |t|
     t.string   "name"
     t.string   "caseid"
@@ -142,6 +160,10 @@ ActiveRecord::Schema.define(version: 20171111205647) do
     t.datetime "updated_at"
     t.date     "date_of_birth"
   end
+
+  add_index "people", ["caseid"], name: "index_people_on_caseid", using: :btree
+  add_index "people", ["is_admin"], name: "index_people_on_is_admin", using: :btree
+  add_index "people", ["name"], name: "index_people_on_name", using: :btree
 
   create_table "registrations", force: :cascade do |t|
     t.integer  "person_id"
@@ -158,6 +180,10 @@ ActiveRecord::Schema.define(version: 20171111205647) do
     t.string   "human_type"
   end
 
+  add_index "registrations", ["card_code"], name: "index_registrations_on_card_code", using: :btree
+  add_index "registrations", ["game_id", "faction_id"], name: "index_registrations_on_game_id_and_faction_id", using: :btree
+  add_index "registrations", ["game_id", "person_id"], name: "index_registrations_on_game_id_and_person_id", using: :btree
+
   create_table "squads", force: :cascade do |t|
     t.string   "name"
     t.integer  "leader_id"
@@ -165,6 +191,8 @@ ActiveRecord::Schema.define(version: 20171111205647) do
     t.datetime "updated_at"
     t.integer  "game_id"
   end
+
+  add_index "squads", ["game_id"], name: "index_squads_on_game_id", using: :btree
 
   create_table "tags", force: :cascade do |t|
     t.integer  "game_id"
@@ -179,6 +207,10 @@ ActiveRecord::Schema.define(version: 20171111205647) do
     t.decimal  "longitude"
   end
 
+  add_index "tags", ["game_id"], name: "index_tags_on_game_id", using: :btree
+  add_index "tags", ["tagee_id"], name: "index_tags_on_tagee_id", using: :btree
+  add_index "tags", ["tagger_id"], name: "index_tags_on_tagger_id", using: :btree
+
   create_table "waivers", force: :cascade do |t|
     t.integer  "person_id"
     t.integer  "game_id"
@@ -191,8 +223,10 @@ ActiveRecord::Schema.define(version: 20171111205647) do
     t.datetime "updated_at"
   end
 
+  add_index "waivers", ["person_id", "game_id"], name: "index_waivers_on_person_id_and_game_id", using: :btree
+
   create_table "zombie_reports", force: :cascade do |t|
-    t.integer  "game_id_id"
+    t.integer  "game_id"
     t.string   "location_lat"
     t.string   "location_long"
     t.integer  "num_zombies"

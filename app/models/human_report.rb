@@ -1,6 +1,6 @@
 class HumanReport < ActiveRecord::Base
-  validates :game_id,
-            :location_lat, :location_long,
+  belongs_to :game
+  validates :location_lat, :location_long,
             :time_sighted, :num_humans, :typical_mag_size,
             :presence => true
 

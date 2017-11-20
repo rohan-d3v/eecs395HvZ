@@ -1,6 +1,6 @@
 class ZombieReport < ActiveRecord::Base
-  validates :game_id,
-            :location_lat, :location_long,
+  belongs_to :game
+  validates :location_lat, :location_long,
             :time_sighted, :num_zombies,
             :presence => true
 

@@ -86,3 +86,30 @@ players.each do |person_id, is_oz|
     emergencyphone: "4445556666",
     signature: Person.where(id: person_id).first.name)
 end
+
+HumanReport.create(
+  game_id: current_game.id,
+  location_lat: "12.33.444.888",
+  location_long: "23.44.555.6",
+  num_humans: 4,
+  typical_mag_size: 11,
+  time_sighted: 1.hours.ago)
+HumanReport.create(
+  game_id: current_game.id,
+  location_lat: "12.22.55.666",
+  location_long: "77.777.77.777",
+  num_humans: 5,
+  typical_mag_size: 666,
+  time_sighted: 1.5.hours.ago)
+ZombieReport.create(
+  game_id: current_game.id,
+  location_lat: "52.22.55.666",
+  location_long: "67.677.67.677",
+  num_zombies: 2,
+  time_sighted: 2.hours.ago)
+ZombieReport.create(
+  game_id: current_game.id,
+  location_lat: "88.888.7.666",
+  location_long: "99.999.999.99",
+  num_zombies: 66,
+  time_sighted: 0.5.hours.ago)
