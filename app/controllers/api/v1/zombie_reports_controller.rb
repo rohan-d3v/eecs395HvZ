@@ -48,10 +48,10 @@ class Api::V1::ZombieReportsController < ApplicationController
 
   api! 'Destroy a zombie report'
   def destroy
-    logger.debug "DESTROY  params: #{params} [id=#{params[:id]}]"
+    logger.debug "DESTROY  params: #{params}"
     @zombie_report = ZombieReport.find(params[:id])
     @zombie_report.destroy
-    head :no_content
+    render json: {success: true}
   end
 
   private
