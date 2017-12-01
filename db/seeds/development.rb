@@ -88,28 +88,28 @@ players.each do |person_id, is_oz|
 end
 
 HumanReport.create(
-  game_id: current_game.id,
-  location_lat: "12.33.444.888",
-  location_long: "23.44.555.6",
+  game: current_game,
+  location_lat: 41.501287,
+  location_long: -81.603347,
   num_humans: 4,
   typical_mag_size: 11,
   time_sighted: 1.hours.ago)
 HumanReport.create(
-  game_id: current_game.id,
-  location_lat: "12.22.55.666",
-  location_long: "77.777.77.777",
+  game: current_game,
+  location_lat: 41.503175,
+  location_long: -81.601416,
   num_humans: 5,
   typical_mag_size: 666,
   time_sighted: 1.5.hours.ago)
 ZombieReport.create(
-  game_id: current_game.id,
-  location_lat: "52.22.55.666",
-  location_long: "67.677.67.677",
+  game: current_game,
+  location_lat: 41.505441,
+  location_long: -81.608882,
   num_zombies: 2,
   time_sighted: 2.hours.ago)
 ZombieReport.create(
-  game_id: current_game.id,
-  location_lat: "88.888.7.666",
-  location_long: "99.999.999.99",
+  game: current_game,
+  location_lat: 41.509000,
+  location_long: -81.607798,
   num_zombies: 66,
   time_sighted: 0.5.hours.ago)

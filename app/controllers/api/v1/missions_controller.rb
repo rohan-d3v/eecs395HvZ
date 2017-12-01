@@ -1,6 +1,7 @@
 class Api::V1::MissionsController < ApplicationController
   before_filter :check_admin, :except => [ :show, :index ]
   protect_from_forgery with: :null_session
+  skip_before_action :verify_authenticity_token
   before_action :destroy_session
 
   def destroy_session

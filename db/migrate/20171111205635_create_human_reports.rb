@@ -1,8 +1,8 @@
 class CreateHumanReports < ActiveRecord::Migration
   def up
     create_table :human_reports do |t|
-      t.integer    :game_id
-      t.string     :location_lat, :location_long
+      t.references :game
+      t.decimal    :location_lat, :location_long
       t.integer    :num_humans, :typical_mag_size
       t.datetime   :time_sighted
     end

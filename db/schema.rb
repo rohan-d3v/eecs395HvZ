@@ -116,8 +116,8 @@ ActiveRecord::Schema.define(version: 20171111205647) do
 
   create_table "human_reports", force: :cascade do |t|
     t.integer  "game_id"
-    t.string   "location_lat"
-    t.string   "location_long"
+    t.decimal  "location_lat"
+    t.decimal  "location_long"
     t.integer  "num_humans"
     t.integer  "typical_mag_size"
     t.datetime "time_sighted"
@@ -227,8 +227,8 @@ ActiveRecord::Schema.define(version: 20171111205647) do
 
   create_table "zombie_reports", force: :cascade do |t|
     t.integer  "game_id"
-    t.string   "location_lat"
-    t.string   "location_long"
+    t.decimal  "location_lat"
+    t.decimal  "location_long"
     t.integer  "num_zombies"
     t.datetime "time_sighted"
   end
