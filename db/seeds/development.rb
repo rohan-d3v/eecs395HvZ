@@ -87,6 +87,7 @@ players.each do |person_id, is_oz|
     signature: Person.where(id: person_id).first.name)
 end
 
+# seed some dummy reports
 HumanReport.create(
   game: current_game,
   location_lat: 41.501287,
@@ -94,6 +95,7 @@ HumanReport.create(
   num_humans: 4,
   typical_mag_size: 11,
   time_sighted: 1.hours.ago)
+
 HumanReport.create(
   game: current_game,
   location_lat: 41.503175,
@@ -101,12 +103,14 @@ HumanReport.create(
   num_humans: 5,
   typical_mag_size: 666,
   time_sighted: 1.5.hours.ago)
+
 ZombieReport.create(
   game: current_game,
   location_lat: 41.505441,
   location_long: -81.608882,
   num_zombies: 2,
   time_sighted: 2.hours.ago)
+  
 ZombieReport.create(
   game: current_game,
   location_lat: 41.509000,
