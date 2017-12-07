@@ -50,7 +50,7 @@ class Api::V1::ZombieReportsController < ApplicationController
   def destroy
     logger.debug "DESTROY  params: #{params}"
     @zombie_report = ZombieReport.find(params[:id])
-    @zombie_report.destroy
+    ZombieReport.destroy(@zombie_report)
     render json: {success: true}
   end
 
