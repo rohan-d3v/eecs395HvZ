@@ -40,8 +40,9 @@ class Api::V1::HumanReportsController < ApplicationController
   def create
     report_params = human_report_params
     logger.debug "CREATE human report: [#{report_params.class}] #{report_params}"
-    logger.debug report_params.inspect
-    @human_report = HumanReport.new(report_params)
+    @human_report = HumanReport.create(report_params)
+    logger.debug @human_report
+    render json: {database_id: @human_report.id}
   end
 
   api! 'Destroy a human report'
