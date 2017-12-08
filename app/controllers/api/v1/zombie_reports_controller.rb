@@ -5,6 +5,8 @@ class Api::V1::ZombieReportsController < ApplicationController
   skip_before_action :verify_authenticity_token
   before_action :destroy_session
 
+  rescue_from ActiveRecord::RecordNotFound, with: :not_found
+
   def destroy_session
     request.session_options[:skip] = true
   end
@@ -12,8 +14,6 @@ class Api::V1::ZombieReportsController < ApplicationController
   api! 'A specific zombie report'
   def show
     @zombie_report = ZombieReport.find(params[:id])
-    logger.debug "SHOW zombie report: [#{@zombie_report.location_lat.class}] #{@zombie_report.location_lat}"
-    logger.debug @zombie_report.inspect
     render json: Api::V1::ZombieReportSerializer.new(@zombie_report).to_json
   end
 
@@ -31,7 +31,7 @@ class Api::V1::ZombieReportsController < ApplicationController
   end
 
   api! 'Create a zombie report'
-  param :zombie_report, Hash, :desc => "Zombie report info" do
+  param :zombie_report, Hash, :desc => "Zombie report info", :required => true do
     param :game_id, Integer, :desc => "Game id", :required => true
     param :location_lat, String, :desc => "Latitude (decimal)", :required => true
     param :location_long, String, :desc => "Longitude (decimal)", :required => true
@@ -40,17 +40,34 @@ class Api::V1::ZombieReportsController < ApplicationController
   end
   def create
     report_params = zombie_report_params
-    logger.debug "CREATE zombie report: [#{report_params.class}] #{report_params}"
-    @zombie_report = ZombieReport.create(report_params)
-    logger.debug @zombie_report
-    render json: {database_id: @zombie_report.id}
+    logger.debug "CREATE zombie report: #{report_params}"
+    @report = ZombieReport.create(report_params)
+    logger.debug @report
+    render json: {database_id: @report.id, success: true}
   end
 
   api! 'Destroy a zombie report'
   def destroy
-    logger.debug "DESTROY  params: #{params}"
-    @zombie_report = ZombieReport.find(params[:id])
-    @zombie_report.destroy
+    logger.debug "DESTROY zombie report: #{params}"
+    @report = ZombieReport.find(params[:id])
+    @report.destroy
+    render json: {success: true}
+  end
+
+  api! 'Update a zombie report'
+  param :zombie_report, Hash, :desc => "Zombie report info", :required => true do
+    param :game_id, Integer, :desc => "Game id", :required => true
+    param :location_lat, String, :desc => "Latitude (decimal)", :required => true
+    param :location_long, String, :desc => "Longitude (decimal)", :required => true
+    param :time_sighted, String, :desc => "Time sighted (iso date string)", :required => true
+    param :num_zombies, Integer, :desc => "Number of zombies in group", :required => true
+  end
+  def update
+    logger.debug "UPDATE zombie report params: #{params}"
+    report_params = zombie_report_params
+    @report = ZombieReport.find(params[:id])
+    logger.debug @report
+    @report.update(report_params)
     render json: {success: true}
   end
 
@@ -67,5 +84,12 @@ class Api::V1::ZombieReportsController < ApplicationController
     report_params[:location_long] = report_params[:location_long].to_d
     report_params[:num_zombies] = report_params[:num_zombies].to_i
     report_params
+  end
+
+  def not_found
+    respond_to do |format|
+      format.html { render file: File.join(Rails.root, 'public', '404.html'), status: 404 }
+      format.json { render json: {error: 'not found', sucess: false}, status: 404 }
+    end
   end
 end

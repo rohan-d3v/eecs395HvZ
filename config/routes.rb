@@ -11,11 +11,7 @@ Hvz::Application.routes.draw do
       resources :people, only: [:index, :show] #:create, :update, :destroy]
       resources :games, only: [:index, :show] #:create, :update, :destroy]
       resources :human_reports, only: [:index, :show, :create, :update, :destroy]
-      resources :zombie_reports, only: [:index, :show, :create, :update, :destroy] do
-        collection do
-          delete :destroy
-        end
-      end
+      resources :zombie_reports, only: [:index, :show, :create, :update, :destroy]
       resources :registrations, only: [:index, :show] do
         collection do
           get "by_faction/:faction" => "registrations#by_faction"
