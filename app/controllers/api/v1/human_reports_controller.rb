@@ -1,24 +1,56 @@
-class Api::V1::HumanReportsController < ApplicationController
+class Api::V1::HumanReportsController < Api::V1::BaseController
   #before_filter :check_admin, :except => [ :show, :index ]
   #before_filter :check_zombie  # auth me pls
-  protect_from_forgery with: :null_session
-  skip_before_action :verify_authenticity_token
-  before_action :destroy_session
+  resource_description do
+    name 'Human Reports'
+    short 'Reports submitted about humans'
+    formats ['json']
+    error 404, "Could not find resource. Will respond with {error: 'not found', success: false}"
+    error 400, "Invalid parameters. Will responsd with {error: 'invalid params', success: false}"
+  end
 
-  rescue_from ActiveRecord::RecordNotFound, with: :not_found
-  rescue_from Apipie::ParamInvalid, with: :invalid_params
-
-  def destroy_session
-    request.session_options[:skip] = true
+  def_param_group :human_report do
+    param :human_report, Hash, :desc => "Human report info", :required => true do
+      param :game_id, Integer, :desc => "Game id", :action_aware => true
+      param :location_lat, String, :desc => "Latitude (decimal)", :action_aware => true
+      param :location_long, String, :desc => "Longitude (decimal)", :action_aware => true
+      param :time_sighted, String, :desc => "Time sighted (iso date string)", :action_aware => true
+      param :num_humans, Integer, :desc => "Number of humans in group", :action_aware => true
+      param :typical_mag_size, Integer, :desc => "Typical magazine size", :action_aware => true
+    end
   end
 
   api! 'A specific human report'
+  meta 'id' => 'the database id of the report'
+  example <<-EOS
+  { "human_report":
+    {
+      "id": 1,
+      "game_id": 1,
+      "location_lat": "41.501286999999",
+      "location_long": "-81.60334699999",
+      "time_sighted":"2017-12-01T03:10:10.548-05:00",
+      "num_humans": 4,
+      "typical_mag_size": 8
+    }
+  }
+  EOS
   def show
-    @report = HumanReport.find_by!(params[:id])
+    @report = HumanReport.find(params[:id])
     render json: Api::V1::HumanReportSerializer.new(@report).to_json
   end
 
+
   api! 'List of human reports'
+  meta 'id' => 'the database id of the report'
+  example <<-EOS
+  { "human_reports":
+    [
+      {"id":1,"game_id":1,"location_lat":"41.5012869999","location_long":"-81.60334699","time_sighted":"2017-12-01T03:10:10.548-05:00","num_humans":4,"typical_mag_size":11},
+      {"id":3,"game_id":1,"location_lat":"41.501763049386064","location_long":"-81.61213763058184","time_sighted":"2017-12-08T17:52:14.678-05:00","num_humans":22,"typical_mag_size":4}
+    ]
+  }
+  EOS
   def index
     @reports = HumanReport.all
     render(
@@ -31,15 +63,13 @@ class Api::V1::HumanReportsController < ApplicationController
     )
   end
 
+
   api! 'Create a human report'
-  param :human_report, Hash, :desc => "Human report info", :required => true do
-    param :game_id, Integer, :desc => "Game id", :required => true
-    param :location_lat, String, :desc => "Latitude (decimal)", :required => true
-    param :location_long, String, :desc => "Longitude (decimal)", :required => true
-    param :time_sighted, String, :desc => "Time sighted (iso date string)", :required => true
-    param :num_humans, Integer, :desc => "Number of humans in group", :required => true
-    param :typical_mag_size, Integer, :desc => "Typical magazine size", :required => true
-  end
+  see "human_reports#show", "Format of a human report"
+  param_group :human_report, :as => :create
+  example <<-EOS
+  { "database_id": 4, "success": true }
+  EOS
   def create
     report_params = human_report_params
     logger.debug "CREATE human report: #{report_params}"
@@ -48,8 +78,12 @@ class Api::V1::HumanReportsController < ApplicationController
     render json: {database_id: @report.id, success: true}
   end
 
+
   api! 'Destroy a human report'
-  param :id, Integer, :desc => "Database id of report", :required => true
+  meta 'id' => 'the database id of the report'
+  example <<-EOS
+  { "success": true }
+  EOS
   def destroy
     logger.debug "DESTROY human report params: #{params}"
     @report = HumanReport.find(params[:id])
@@ -57,15 +91,14 @@ class Api::V1::HumanReportsController < ApplicationController
     render json: {success: true}
   end
 
+
   api! 'Update a human report'
-  param :human_report, Hash, :desc => "Human report info", :required => true do
-    param :game_id, Integer, :desc => "Game id", :required => true
-    param :location_lat, String, :desc => "Latitude (decimal)", :required => true
-    param :location_long, String, :desc => "Longitude (decimal)", :required => true
-    param :time_sighted, String, :desc => "Time sighted (iso date string)", :required => true
-    param :num_humans, Integer, :desc => "Number of humans in group", :required => true
-    param :typical_mag_size, Integer, :desc => "Typical magazine size per person", :required => true
-  end
+  meta 'id' => 'the database id of the report'
+  see "human_reports#show", "Format of a human report"
+  param_group :human_report, :as => :update
+  example <<-EOS
+  { "success": true }
+  EOS
   def update
     logger.debug "UPDATE human report params: #{params}"
     report_params = human_report_params
@@ -74,6 +107,7 @@ class Api::V1::HumanReportsController < ApplicationController
     @report.update(report_params)
     render json: {success: true}
   end
+
 
   private
   def human_report_params
@@ -89,19 +123,5 @@ class Api::V1::HumanReportsController < ApplicationController
     report_params[:num_humans] = report_params[:num_humans].to_i
     report_params[:typical_mag_size] = report_params[:typical_mag_size].to_i
     report_params
-  end
-
-  def not_found
-    respond_to do |format|
-      format.html { render file: File.join(Rails.root, 'public', '404.html'), status: 404 }
-      format.json { render json: {error: 'not found', sucess: false}, status: 404 }
-    end
-  end
-
-  def invalid_params
-    respond_to do |format|
-      format.html { render file: File.join(Rails.root, 'public', '404.html'), status: 400 }
-      format.json { render json: {error: 'invalid params', sucess: false}, status: 400 }
-    end
   end
 end

@@ -1,13 +1,6 @@
-class Api::V1::RegistrationsController < ApplicationController
+class Api::V1::RegistrationsController < Api::V1::BaseController
   before_filter :check_admin, :except => [ :show, :index, :by_faction ]
   #respond_to :json
-  protect_from_forgery with: :null_session
-  skip_before_action :verify_authenticity_token
-  before_action :destroy_session
-
-  def destroy_session
-    request.session_options[:skip] = true
-  end
 
   api! 'A specific registration'
   def show
