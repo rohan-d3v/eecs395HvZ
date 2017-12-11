@@ -12,6 +12,7 @@ Hvz::Application.routes.draw do
       resources :registrations, only: [:index, :show] do
         collection do
           get "by_faction/:faction" => "registrations#by_faction"
+          get "by_faction/:faction/:card_code" => "registrations#by_faction"
         end
       end
     end

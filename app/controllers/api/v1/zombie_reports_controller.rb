@@ -21,7 +21,14 @@ class Api::V1::ZombieReportsController < Api::V1::BaseController
 
 
   api! 'A specific zombie report'
-  meta 'id' => 'the database id of the report'
+  meta 'zombie_report' => {
+    'id' => "the database id of the report",
+    'game_id' => "the id of the game this was reported for",
+    'location_lat' => "latitude (decimal)",
+    'location_long' => "longitude (decimal)",
+    'time_sighted' => "time of report (iso 8601)",
+    'num_zombies' => "number of zombies"
+  }
   example <<-EOS
   {
     "id": 97,
@@ -39,7 +46,14 @@ class Api::V1::ZombieReportsController < Api::V1::BaseController
 
 
   api! 'List of zombie reports'
-  meta 'id' => 'the database id of the report'
+  meta 'zombie_report' => {
+    'id' => "the database id of the report",
+    'game_id' => "the id of the game this was reported for",
+    'location_lat' => "latitude (decimal)",
+    'location_long' => "longitude (decimal)",
+    'time_sighted' => "time of report (iso 8601)",
+    'num_zombies' => "number of zombies"
+  }
   example <<-EOS
   { "zombie_reports":
     [
@@ -63,7 +77,13 @@ class Api::V1::ZombieReportsController < Api::V1::BaseController
 
 
   api! 'Create a zombie report'
-  see "zombie_reports#show", "Format of a zombie report"
+  meta 'zombie_report' => {
+    'game_id' => "the id of the game this was reported for",
+    'location_lat' => "latitude (decimal)",
+    'location_long' => "longitude (decimal)",
+    'time_sighted' => "time of report (iso 8601)",
+    'num_zombies' => "number of zombies"
+  }
   param_group :zombie_report, :as => :create
   example <<-EOS
   { "database_id": 4, "success": true }
@@ -91,9 +111,15 @@ class Api::V1::ZombieReportsController < Api::V1::BaseController
 
 
   api! 'Update a zombie report'
-  meta 'id' => 'the database id of the report'
+  meta 'zombie_report' => {
+    'id' => "the database id of the report",
+    'game_id' => "the id of the game this was reported for",
+    'location_lat' => "latitude (decimal)",
+    'location_long' => "longitude (decimal)",
+    'time_sighted' => "time of report (iso 8601)",
+    'num_zombies' => "number of zombies"
+  }
   param_group :zombie_report, :as => :update
-  see "zombie_reports#show", "Format of a zombie report"
   example <<-EOS
   { "success": true }
   EOS

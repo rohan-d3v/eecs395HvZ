@@ -20,8 +20,17 @@ class Api::V1::HumanReportsController < Api::V1::BaseController
     end
   end
 
+
   api! 'A specific human report'
-  meta 'id' => 'the database id of the report'
+  meta 'human_report' => {
+    'id' => "the database id of the report",
+    'game_id' => "the id of the game this was reported for",
+    'location_lat' => "latitude (decimal)",
+    'location_long' => "longitude (decimal)",
+    'time_sighted' => "time of report (iso 8601)",
+    'num_humans' => "number of humans",
+    'typical_mag_size' => "typical magazine size (int)"
+  }
   example <<-EOS
   { "human_report":
     {
@@ -42,7 +51,15 @@ class Api::V1::HumanReportsController < Api::V1::BaseController
 
 
   api! 'List of human reports'
-  meta 'id' => 'the database id of the report'
+  meta 'human_report' => {
+    'id' => "the database id of the report",
+    'game_id' => "the id of the game this was reported for",
+    'location_lat' => "latitude (decimal)",
+    'location_long' => "longitude (decimal)",
+    'time_sighted' => "time of report (iso 8601)",
+    'num_humans' => "number of humans",
+    'typical_mag_size' => "typical magazine size (int)"
+  }
   example <<-EOS
   { "human_reports":
     [
@@ -66,6 +83,14 @@ class Api::V1::HumanReportsController < Api::V1::BaseController
 
   api! 'Create a human report'
   see "human_reports#show", "Format of a human report"
+  meta 'human_report' => {
+    'game_id' => "the id of the game this was reported for",
+    'location_lat' => "latitude (decimal)",
+    'location_long' => "longitude (decimal)",
+    'time_sighted' => "time of report (iso 8601)",
+    'num_humans' => "number of humans",
+    'typical_mag_size' => "typical magazine size (int)"
+  }
   param_group :human_report, :as => :create
   example <<-EOS
   { "database_id": 4, "success": true }
@@ -93,7 +118,15 @@ class Api::V1::HumanReportsController < Api::V1::BaseController
 
 
   api! 'Update a human report'
-  meta 'id' => 'the database id of the report'
+  meta 'human_report' => {
+    'id' => "the database id of the report",
+    'game_id' => "the id of the game this was reported for",
+    'location_lat' => "latitude (decimal)",
+    'location_long' => "longitude (decimal)",
+    'time_sighted' => "time of report (iso 8601)",
+    'num_humans' => "number of humans",
+    'typical_mag_size' => "typical magazine size (int)"
+  }
   see "human_reports#show", "Format of a human report"
   param_group :human_report, :as => :update
   example <<-EOS
