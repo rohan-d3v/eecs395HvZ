@@ -8,13 +8,9 @@ rake db:schema:load
 ```
 passenger-config restart-app
 ```
-### To re-generate the api cache,
+### To re-generate the api documentation cache,
 ```
 rake apipie:cache
-```
-### To generate static api docs (plain html),
-```
-rake apipie:static
 ```
 
 > To set up SMS integration with Twilio, set the following environment variables:

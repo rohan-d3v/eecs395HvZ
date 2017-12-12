@@ -8,7 +8,7 @@ class Api::V1::BaseController < ApplicationController
   before_action :destroy_session
 
   rescue_from ActiveRecord::RecordNotFound, with: :not_found!
-  rescue_from Apipie::ParamInvalid, with: :invalid_params
+  rescue_from Apipie::ParamInvalid, with: :invalid_params!
   rescue_from Pundit::NotAuthorizedError, with: :unauthorized!
 
   protected
@@ -18,30 +18,25 @@ class Api::V1::BaseController < ApplicationController
   end
 
   def not_found!
-    respond_to do |format|
-      format.html { render file: File.join(Rails.root, 'public', '404.html'), status: 404 }
-      format.json { render json: {error: 'not found', sucess: false}, status: 404 }
-    end
+    render json: {error: 'not found', sucess: false}, status: 404
   end
 
   def invalid_params!
-    respond_to do |format|
-      format.html { render file: File.join(Rails.root, 'public', '404.html'), status: 400 }
-      format.json { render json: {error: 'invalid params', sucess: false}, status: 400 }
-    end
+    render json: {error: 'invalid params', sucess: false}, status: 400
   end
 
   def unauthenticated!
     response.headers['WWW-Authenticate'] = "Token realm=Application"
-    render json: { error: 'Bad credentials' }, status: 401
+    render json: {error: 'Bad credentials'}, status: 401
   end
 
   def unauthorized!
-    render json: { error: 'not authorized' }, status: 403
+    render json: {error: 'not authorized'}, status: 403
   end
 
   def invalid_resource!(errors = [])
-    api_error(status: 422, errors: errors)
+    #api_error(status: 422, errors: errors)
+    render json: errors.to_json, status: 422
   end
 
   # def not_found!

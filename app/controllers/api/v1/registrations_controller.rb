@@ -1,5 +1,5 @@
 class Api::V1::RegistrationsController < Api::V1::BaseController
-  before_filter :check_admin, :except => [ :show, :index, :by_faction ]
+  #before_filter :check_admin, :except => [ :show, :index ]
   #respond_to :json
   resource_description do
     name 'Player Registrations'
@@ -58,9 +58,7 @@ class Api::V1::RegistrationsController < Api::V1::BaseController
   end
 
 
-  api! 'Get registrations that are part of a certain faction (optionally by card code as well).
-  If you specify a card code, it will return the first matching registration. If you don\'t, it will
-  return all registations in that faction.'
+  api! 'Get registrations that are part of a certain faction.'
   meta 'registration' => {
     "person_id" => "the id of the player",
     "game_id" => "id of the game this player is registered to play",
@@ -71,7 +69,10 @@ class Api::V1::RegistrationsController < Api::V1::BaseController
     "card_code" => "unique player code",
     "mission_ids" => "missions that the player is registered for"
   }
-  param :faction, String, "faction id or short name", :required => true
+  param :faction, String, "Faction name or id. Valid options are: "+
+    Registration::FACTION_NAMES[Registration::HUMAN_FACTION]+'('+Registration::HUMAN_FACTION.to_s+'), '+
+    Registration::FACTION_NAMES[Registration::ZOMBIE_FACTION]+'('+Registration::ZOMBIE_FACTION.to_s+'), '+
+    'or '+Registration::FACTION_NAMES[Registration::DECEASED_FACTION]+'('+Registration::DECEASED_FACTION.to_s+')', :required => true
   param :card_code, String, "player card code", :required => false
   example <<-EOS
   {
@@ -84,7 +85,6 @@ class Api::V1::RegistrationsController < Api::V1::BaseController
     ]
   }
   EOS
-  see "registrations#show", "Format of a single registration"
   def by_faction
     def render_faction_error
       render json: {
@@ -97,22 +97,12 @@ class Api::V1::RegistrationsController < Api::V1::BaseController
         success: false
       }, status: 404
     end
-    if !params.has_key?(:faction)
-      render_faction_error
-    end
 
     faction = params[:faction]
-    card_code = params.has_key?(:card_code) ? params[:card_code] : nil
 
     def registation_logic (faction_id)
-      card_code = params.has_key?(:card_code) ? params[:card_code] : nil
-      if (card_code.nil?)
-        registrations = Registration.where(faction_id: faction_id)
-        render_registrations registrations
-      else
-        registration = Registration.find_by!(faction_id: faction_id, card_code: card_code)
-        render_registration registration
-      end
+      registrations = Registration.where(faction_id: faction_id)
+      render_registrations registrations
     end
 
     if (faction == Registration::HUMAN_FACTION.to_s or faction.downcase == Registration::FACTION_NAMES[Registration::HUMAN_FACTION])
@@ -124,6 +114,37 @@ class Api::V1::RegistrationsController < Api::V1::BaseController
     else
       render_faction_error
     end
+  end
+
+
+  api! 'Get first matching registration by card code'
+  meta 'registration' => {
+    "person_id" => "the id of the player",
+    "game_id" => "id of the game this player is registered to play",
+    "faction_id" => "name or id of the faction. Valid options are: "+
+      Registration::FACTION_NAMES[Registration::HUMAN_FACTION]+'('+Registration::HUMAN_FACTION.to_s+'), '+
+      Registration::FACTION_NAMES[Registration::ZOMBIE_FACTION]+'('+Registration::ZOMBIE_FACTION.to_s+'), '+
+      'or '+Registration::FACTION_NAMES[Registration::DECEASED_FACTION]+'('+Registration::DECEASED_FACTION.to_s+')',
+    "card_code" => "unique player code",
+    "mission_ids" => "missions that the player is registered for"
+  }
+  param :card_code, String, "player card code", :required => true
+  example <<-EOS
+  {
+    "registration":
+    {
+      "person_id": 1,
+      "game_id": 1,
+      "faction_id": 0,
+      "card_code": "D391F7",
+      "mission_ids": []
+    }
+  }
+  EOS
+  def by_card_code
+    card_code = params[:card_code]
+    registration = Registration.find_by!(card_code: card_code)
+    render_registration registration
   end
 
 
